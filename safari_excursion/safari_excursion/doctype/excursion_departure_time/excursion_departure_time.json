@@ -1,0 +1,94 @@
+{
+    "actions": [],
+    "creation": "2025-07-30 16:05:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+     "departure_time",
+     "time_label",
+     "column_break_3",
+     "is_default",
+     "available_days",
+     "section_break_6",
+     "description",
+     "max_capacity",
+     "column_break_9",
+     "premium_charge",
+     "is_active"
+    ],
+    "fields": [
+     {
+      "fieldname": "departure_time",
+      "fieldtype": "Time",
+      "in_list_view": 1,
+      "label": "Departure Time",
+      "reqd": 1
+     },
+     {
+      "fieldname": "time_label",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Time Label"
+     },
+     {
+      "fieldname": "column_break_3",
+      "fieldtype": "Column Break"
+     },
+     {
+      "default": 0,
+      "fieldname": "is_default",
+      "fieldtype": "Check",
+      "label": "Is Default"
+     },
+     {
+      "fieldname": "available_days",
+      "fieldtype": "Select",
+      "label": "Available Days",
+      "options": "All Days\nWeekdays Only\nWeekends Only\nCustom"
+     },
+     {
+      "fieldname": "section_break_6",
+      "fieldtype": "Section Break"
+     },
+     {
+      "fieldname": "description",
+      "fieldtype": "Small Text",
+      "label": "Description"
+     },
+     {
+      "fieldname": "max_capacity",
+      "fieldtype": "Int",
+      "label": "Max Capacity for this Time"
+     },
+     {
+      "fieldname": "column_break_9",
+      "fieldtype": "Column Break"
+     },
+     {
+      "fieldname": "premium_charge",
+      "fieldtype": "Currency",
+      "label": "Premium Charge"
+     },
+     {
+      "default": 1,
+      "fieldname": "is_active",
+      "fieldtype": "Check",
+      "label": "Is Active"
+     }
+    ],
+    "index_web_pages_for_search": 1,
+    "is_submittable": 0,
+    "istable": 1,
+    "links": [],
+    "modified": "2025-07-30 16:05:00.000000",
+    "modified_by": "Administrator",
+    "module": "Safari Excursion",
+    "name": "Excursion Departure Time",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "departure_time",
+    "sort_order": "ASC",
+    "states": [],
+    "track_changes": 1
+   }

@@ -1,0 +1,93 @@
+{
+    "actions": [],
+    "creation": "2025-07-30 16:15:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+     "area_name",
+     "area_type",
+     "column_break_3",
+     "travel_time_minutes",
+     "distance_km",
+     "section_break_6",
+     "description",
+     "operating_permits_required",
+     "column_break_9",
+     "seasonal_restrictions",
+     "special_requirements"
+    ],
+    "fields": [
+     {
+      "fieldname": "area_name",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Area Name",
+      "reqd": 1
+     },
+     {
+      "fieldname": "area_type",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Area Type",
+      "options": "City\nCounty\nRegion\nNational Park\nMarine Park\nConservancy\nPrivate Reserve"
+     },
+     {
+      "fieldname": "column_break_3",
+      "fieldtype": "Column Break"
+     },
+     {
+      "fieldname": "travel_time_minutes",
+      "fieldtype": "Int",
+      "label": "Travel Time (Minutes)"
+     },
+     {
+      "fieldname": "distance_km",
+      "fieldtype": "Float",
+      "label": "Distance (KM)",
+      "precision": "2"
+     },
+     {
+      "fieldname": "section_break_6",
+      "fieldtype": "Section Break"
+     },
+     {
+      "fieldname": "description",
+      "fieldtype": "Small Text",
+      "label": "Description"
+     },
+     {
+      "fieldname": "operating_permits_required",
+      "fieldtype": "Small Text",
+      "label": "Operating Permits Required"
+     },
+     {
+      "fieldname": "column_break_9",
+      "fieldtype": "Column Break"
+     },
+     {
+      "fieldname": "seasonal_restrictions",
+      "fieldtype": "Small Text",
+      "label": "Seasonal Restrictions"
+     },
+     {
+      "fieldname": "special_requirements",
+      "fieldtype": "Small Text",
+      "label": "Special Requirements"
+     }
+    ],
+    "index_web_pages_for_search": 1,
+    "is_submittable": 0,
+    "istable": 1,
+    "links": [],
+    "modified": "2025-07-30 16:15:00.000000",
+    "modified_by": "Administrator",
+    "module": "Safari Excursion",
+    "name": "Excursion Operating Area",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "area_name",
+    "sort_order": "ASC",
+    "states": [],
+    "track_changes": 1
+   }

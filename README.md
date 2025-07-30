@@ -1,4 +1,4 @@
-## Safari Excusion
+## Safari Excursion
 
 Excursion and single day activity management app for SafariERP
 

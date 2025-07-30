@@ -1,0 +1,59 @@
+{
+    "actions": [],
+    "creation": "2025-07-30 17:10:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+     "day",
+     "is_available",
+     "column_break_3",
+     "max_capacity_override",
+     "special_notes"
+    ],
+    "fields": [
+     {
+      "fieldname": "day",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Day",
+      "options": "Monday\nTuesday\nWednesday\nThursday\nFriday\nSaturday\nSunday",
+      "reqd": 1
+     },
+     {
+      "default": 1,
+      "fieldname": "is_available",
+      "fieldtype": "Check",
+      "in_list_view": 1,
+      "label": "Is Available"
+     },
+     {
+      "fieldname": "column_break_3",
+      "fieldtype": "Column Break"
+     },
+     {
+      "fieldname": "max_capacity_override",
+      "fieldtype": "Int",
+      "label": "Max Capacity Override"
+     },
+     {
+      "fieldname": "special_notes",
+      "fieldtype": "Small Text",
+      "label": "Special Notes"
+     }
+    ],
+    "index_web_pages_for_search": 1,
+    "is_submittable": 0,
+    "istable": 1,
+    "links": [],
+    "modified": "2025-07-30 17:10:00.000000",
+    "modified_by": "Administrator",
+    "module": "Safari Excursion",
+    "name": "Excursion Available Day",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "day",
+    "sort_order": "ASC",
+    "states": [],
+    "track_changes": 1
+   }

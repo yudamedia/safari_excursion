@@ -1,0 +1,78 @@
+{
+    "actions": [],
+    "creation": "2025-07-30 16:50:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+     "equipment_name",
+     "quantity_used",
+     "column_break_3",
+     "condition_before",
+     "condition_after",
+     "section_break_6",
+     "notes",
+     "replacement_needed"
+    ],
+    "fields": [
+     {
+      "fieldname": "equipment_name",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Equipment Name",
+      "reqd": 1
+     },
+     {
+      "default": "1",
+      "fieldname": "quantity_used",
+      "fieldtype": "Int",
+      "in_list_view": 1,
+      "label": "Quantity Used"
+     },
+     {
+      "fieldname": "column_break_3",
+      "fieldtype": "Column Break"
+     },
+     {
+      "fieldname": "condition_before",
+      "fieldtype": "Select",
+      "label": "Condition Before",
+      "options": "Excellent\nGood\nFair\nPoor"
+     },
+     {
+      "fieldname": "condition_after",
+      "fieldtype": "Select",
+      "label": "Condition After",
+      "options": "Excellent\nGood\nFair\nPoor\nDamaged\nLost"
+     },
+     {
+      "fieldname": "section_break_6",
+      "fieldtype": "Section Break"
+     },
+     {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+     },
+     {
+      "default": 0,
+      "fieldname": "replacement_needed",
+      "fieldtype": "Check",
+      "label": "Replacement Needed"
+     }
+    ],
+    "index_web_pages_for_search": 1,
+    "is_submittable": 0,
+    "istable": 1,
+    "links": [],
+    "modified": "2025-07-30 16:50:00.000000",
+    "modified_by": "Administrator",
+    "module": "Safari Excursion",
+    "name": "Excursion Equipment Used",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "equipment_name",
+    "sort_order": "ASC",
+    "states": [],
+    "track_changes": 1
+   }

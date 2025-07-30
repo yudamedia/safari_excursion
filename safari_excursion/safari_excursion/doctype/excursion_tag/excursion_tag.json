@@ -1,0 +1,57 @@
+{
+    "actions": [],
+    "creation": "2025-07-30 17:20:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+     "tag_name",
+     "tag_color",
+     "column_break_3",
+     "is_searchable",
+     "display_priority"
+    ],
+    "fields": [
+     {
+      "fieldname": "tag_name",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Tag Name",
+      "reqd": 1
+     },
+     {
+      "fieldname": "tag_color",
+      "fieldtype": "Color",
+      "label": "Tag Color"
+     },
+     {
+      "fieldname": "column_break_3",
+      "fieldtype": "Column Break"
+     },
+     {
+      "default": 1,
+      "fieldname": "is_searchable",
+      "fieldtype": "Check",
+      "label": "Is Searchable"
+     },
+     {
+      "fieldname": "display_priority",
+      "fieldtype": "Int",
+      "label": "Display Priority"
+     }
+    ],
+    "index_web_pages_for_search": 1,
+    "is_submittable": 0,
+    "istable": 1,
+    "links": [],
+    "modified": "2025-07-30 17:20:00.000000",
+    "modified_by": "Administrator",
+    "module": "Safari Excursion",
+    "name": "Excursion Tag",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "tag_name",
+    "sort_order": "ASC",
+    "states": [],
+    "track_changes": 1
+   }

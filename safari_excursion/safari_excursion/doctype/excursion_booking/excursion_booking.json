@@ -1,0 +1,656 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "format:EXB-{YYYY}-{MM}-{#####}",
+    "creation": "2025-07-30 11:15:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+     "booking_information_section",
+     "booking_number",
+     "booking_date",
+     "booking_status",
+     "column_break_4",
+     "customer",
+     "customer_name",
+     "customer_phone",
+     "customer_email",
+     "section_break_9",
+     "booking_party",
+     "primary_guest",
+     "excursion_details_section",
+     "excursion_package",
+     "excursion_date",
+     "departure_time",
+     "column_break_15",
+     "duration_hours",
+     "total_guests",
+     "adult_count",
+     "child_count",
+     "guest_details_section",
+     "guests",
+     "special_requirements",
+     "column_break_22",
+     "dietary_requirements",
+     "medical_conditions",
+     "emergency_contact",
+     "pickup_and_transport_section",
+     "pickup_required",
+     "pickup_location",
+     "pickup_time",
+     "column_break_28",
+     "dropoff_location",
+     "estimated_return_time",
+     "transport_notes",
+     "pricing_section",
+     "currency",
+     "base_amount",
+     "child_discount",
+     "column_break_35",
+     "group_discount",
+     "additional_charges",
+     "total_amount",
+     "payment_section",
+     "payment_status",
+     "deposit_required",
+     "deposit_amount",
+     "column_break_42",
+     "balance_due",
+     "payment_due_date",
+     "payment_method",
+     "operational_section",
+     "assigned_guide",
+     "assigned_vehicle",
+     "driver_contact_shared",
+     "column_break_49",
+     "guest_confirmation_status",
+     "pickup_confirmation_status",
+     "excursion_status",
+     "communication_section",
+     "booking_source",
+     "agent",
+     "column_break_55",
+     "confirmation_sent",
+     "reminder_sent",
+     "feedback_collected",
+     "tracking_section",
+     "transport_booking",
+     "excursion_operation",
+     "column_break_61",
+     "sales_order",
+     "sales_invoice",
+     "cancellation_section",
+     "cancellation_reason",
+     "cancellation_date",
+     "column_break_66",
+     "cancellation_charges",
+     "refund_amount",
+     "refund_status"
+    ],
+    "fields": [
+     {
+      "fieldname": "booking_information_section",
+      "fieldtype": "Section Break",
+      "label": "Booking Information"
+     },
+     {
+      "fieldname": "booking_number",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Booking Number",
+      "read_only": 1,
+      "unique": 1
+     },
+     {
+      "default": "Today",
+      "fieldname": "booking_date",
+      "fieldtype": "Date",
+      "label": "Booking Date",
+      "reqd": 1
+     },
+     {
+      "default": "Draft",
+      "fieldname": "booking_status",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Booking Status",
+      "options": "Draft\nConfirmed\nCancelled\nCompleted",
+      "reqd": 1
+     },
+     {
+      "fieldname": "column_break_4",
+      "fieldtype": "Column Break"
+     },
+     {
+      "fieldname": "customer",
+      "fieldtype": "Link",
+      "label": "Customer",
+      "options": "Customer"
+     },
+     {
+      "fieldname": "customer_name",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Customer Name",
+      "reqd": 1
+     },
+     {
+      "fieldname": "customer_phone",
+      "fieldtype": "Phone",
+      "label": "Customer Phone",
+      "reqd": 1
+     },
+     {
+      "fieldname": "customer_email",
+      "fieldtype": "Data",
+      "label": "Customer Email",
+      "options": "Email"
+     },
+     {
+      "fieldname": "section_break_9",
+      "fieldtype": "Section Break"
+     },
+     {
+      "fieldname": "booking_party",
+      "fieldtype": "Link",
+      "label": "Booking Party",
+      "options": "Booking Party"
+     },
+     {
+      "fieldname": "primary_guest",
+      "fieldtype": "Link",
+      "label": "Primary Guest",
+      "options": "Safari Guest"
+     },
+     {
+      "fieldname": "excursion_details_section",
+      "fieldtype": "Section Break",
+      "label": "Excursion Details"
+     },
+     {
+      "fieldname": "excursion_package",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Excursion Package",
+      "options": "Excursion Package",
+      "reqd": 1
+     },
+     {
+      "fieldname": "excursion_date",
+      "fieldtype": "Date",
+      "in_list_view": 1,
+      "label": "Excursion Date",
+      "reqd": 1
+     },
+     {
+      "fieldname": "departure_time",
+      "fieldtype": "Time",
+      "label": "Departure Time",
+      "reqd": 1
+     },
+     {
+      "fieldname": "column_break_15",
+      "fieldtype": "Column Break"
+     },
+     {
+      "fieldname": "duration_hours",
+      "fieldtype": "Float",
+      "label": "Duration (Hours)",
+      "precision": "1",
+      "read_only": 1
+     },
+     {
+      "fieldname": "total_guests",
+      "fieldtype": "Int",
+      "label": "Total Guests",
+      "reqd": 1
+     },
+     {
+      "fieldname": "adult_count",
+      "fieldtype": "Int",
+      "label": "Adult Count",
+      "reqd": 1
+     },
+     {
+      "fieldname": "child_count",
+      "fieldtype": "Int",
+      "label": "Child Count"
+     },
+     {
+      "fieldname": "guest_details_section",
+      "fieldtype": "Section Break",
+      "label": "Guest Details"
+     },
+     {
+      "fieldname": "guests",
+      "fieldtype": "Table",
+      "label": "Guests",
+      "options": "Excursion Booking Guest"
+     },
+     {
+      "fieldname": "special_requirements",
+      "fieldtype": "Small Text",
+      "label": "Special Requirements"
+     },
+     {
+      "fieldname": "column_break_22",
+      "fieldtype": "Column Break"
+     },
+     {
+      "fieldname": "dietary_requirements",
+      "fieldtype": "Small Text",
+      "label": "Dietary Requirements"
+     },
+     {
+      "fieldname": "medical_conditions",
+      "fieldtype": "Small Text",
+      "label": "Medical Conditions"
+     },
+     {
+      "fieldname": "emergency_contact",
+      "fieldtype": "Small Text",
+      "label": "Emergency Contact"
+     },
+     {
+      "fieldname": "pickup_and_transport_section",
+      "fieldtype": "Section Break",
+      "label": "Pickup and Transport"
+     },
+     {
+      "default": 1,
+      "fieldname": "pickup_required",
+      "fieldtype": "Check",
+      "label": "Pickup Required"
+     },
+     {
+      "fieldname": "pickup_type",
+      "fieldtype": "Select",
+      "label": "Pickup Type",
+      "options": "Central Pickup Point\nIndividual Hotel Pickups\nMixed Pickup",
+      "reqd": 1
+     },
+     {
+      "depends_on": "eval:doc.pickup_type=='Central Pickup Point'",
+      "fieldname": "pickup_location",
+      "fieldtype": "Small Text",
+      "label": "Central Pickup Location"
+     },
+     {
+      "depends_on": "eval:doc.pickup_type=='Central Pickup Point'",
+      "fieldname": "pickup_time",
+      "fieldtype": "Time",
+      "label": "Pickup Time"
+     },
+     {
+      "depends_on": "eval:doc.pickup_type=='Individual Hotel Pickups'",
+      "fieldname": "guest_pickups",
+      "fieldtype": "Table",
+      "label": "Guest Pickup Schedule",
+      "options": "Excursion Guest Pickup"
+     },
+     {
+      "fieldname": "column_break_28",
+      "fieldtype": "Column Break"
+     },
+     {
+      "fieldname": "dropoff_location",
+      "fieldtype": "Small Text",
+      "label": "Dropoff Location"
+     },
+     {
+      "fieldname": "estimated_return_time",
+      "fieldtype": "Time",
+      "label": "Estimated Return Time"
+     },
+     {
+      "fieldname": "transport_notes",
+      "fieldtype": "Small Text",
+      "label": "Transport Notes"
+     },
+     {
+      "fieldname": "pricing_section",
+      "fieldtype": "Section Break",
+      "label": "Pricing"
+     },
+     {
+      "default": "USD",
+      "fieldname": "currency",
+      "fieldtype": "Link",
+      "label": "Currency",
+      "options": "Currency",
+      "reqd": 1
+     },
+     {
+      "fieldname": "base_amount",
+      "fieldtype": "Currency",
+      "label": "Base Amount",
+      "options": "currency"
+     },
+     {
+      "fieldname": "child_discount",
+      "fieldtype": "Currency",
+      "label": "Child Discount",
+      "options": "currency"
+     },
+     {
+      "fieldname": "column_break_35",
+      "fieldtype": "Column Break"
+     },
+     {
+      "fieldname": "group_discount",
+      "fieldtype": "Currency",
+      "label": "Group Discount",
+      "options": "currency"
+     },
+     {
+      "fieldname": "additional_charges",
+      "fieldtype": "Currency",
+      "label": "Additional Charges",
+      "options": "currency"
+     },
+     {
+      "fieldname": "total_amount",
+      "fieldtype": "Currency",
+      "label": "Total Amount",
+      "options": "currency",
+      "reqd": 1
+     },
+     {
+      "fieldname": "payment_section",
+      "fieldtype": "Section Break",
+      "label": "Payment"
+     },
+     {
+      "default": "Unpaid",
+      "fieldname": "payment_status",
+      "fieldtype": "Select",
+      "label": "Payment Status",
+      "options": "Unpaid\nPartially Paid\nPaid\nRefunded",
+      "reqd": 1
+     },
+     {
+      "default": 0,
+      "fieldname": "deposit_required",
+      "fieldtype": "Check",
+      "label": "Deposit Required"
+     },
+     {
+      "depends_on": "deposit_required",
+      "fieldname": "deposit_amount",
+      "fieldtype": "Currency",
+      "label": "Deposit Amount",
+      "options": "currency"
+     },
+     {
+      "fieldname": "column_break_42",
+      "fieldtype": "Column Break"
+     },
+     {
+      "fieldname": "balance_due",
+      "fieldtype": "Currency",
+      "label": "Balance Due",
+      "options": "currency",
+      "read_only": 1
+     },
+     {
+      "fieldname": "payment_due_date",
+      "fieldtype": "Date",
+      "label": "Payment Due Date"
+     },
+     {
+      "fieldname": "payment_method",
+      "fieldtype": "Select",
+      "label": "Payment Method",
+      "options": "\nCash\nCredit Card\nBank Transfer\nMobile Money\nCheque"
+     },
+     {
+      "fieldname": "operational_section",
+      "fieldtype": "Section Break",
+      "label": "Operational"
+     },
+     {
+      "fieldname": "assigned_guide",
+      "fieldtype": "Link",
+      "label": "Assigned Guide",
+      "options": "Safari Guide"
+     },
+     {
+      "fieldname": "assigned_vehicle",
+      "fieldtype": "Link",
+      "label": "Assigned Vehicle",
+      "options": "Vehicle"
+     },
+     {
+      "default": 0,
+      "fieldname": "driver_contact_shared",
+      "fieldtype": "Check",
+      "label": "Driver Contact Shared"
+     },
+     {
+      "fieldname": "column_break_49",
+      "fieldtype": "Column Break"
+     },
+     {
+      "default": "Pending",
+      "fieldname": "guest_confirmation_status",
+      "fieldtype": "Select",
+      "label": "Guest Confirmation Status",
+      "options": "Pending\nConfirmed\nNot Confirmed"
+     },
+     {
+      "default": "Pending",
+      "fieldname": "pickup_confirmation_status",
+      "fieldtype": "Select",
+      "label": "Pickup Confirmation Status",
+      "options": "Pending\nConfirmed\nGuest Located\nIn Transit\nCompleted"
+     },
+     {
+      "default": "Scheduled",
+      "fieldname": "excursion_status",
+      "fieldtype": "Select",
+      "label": "Excursion Status",
+      "options": "Scheduled\nIn Progress\nCompleted\nCancelled"
+     },
+     {
+      "fieldname": "communication_section",
+      "fieldtype": "Section Break",
+      "label": "Communication"
+     },
+     {
+      "fieldname": "booking_source",
+      "fieldtype": "Select",
+      "label": "Booking Source",
+      "options": "\nDirect\nWebsite\nPhone\nEmail\nWalk-in\nAgent\nReferral"
+     },
+     {
+      "fieldname": "agent",
+      "fieldtype": "Link",
+      "label": "Agent",
+      "options": "Travel Agent"
+     },
+     {
+      "fieldname": "column_break_55",
+      "fieldtype": "Column Break"
+     },
+     {
+      "default": 0,
+      "fieldname": "confirmation_sent",
+      "fieldtype": "Check",
+      "label": "Confirmation Sent"
+     },
+     {
+      "default": 0,
+      "fieldname": "reminder_sent",
+      "fieldtype": "Check",
+      "label": "Reminder Sent"
+     },
+     {
+      "default": 0,
+      "fieldname": "feedback_collected",
+      "fieldtype": "Check",
+      "label": "Feedback Collected"
+     },
+     {
+      "fieldname": "tracking_section",
+      "fieldtype": "Section Break",
+      "label": "System Tracking"
+     },
+     {
+      "fieldname": "transport_booking",
+      "fieldtype": "Link",
+      "label": "Transport Booking",
+      "options": "Transport Booking",
+      "read_only": 1
+     },
+     {
+      "fieldname": "park_booking",
+      "fieldtype": "Link",
+      "label": "Park Booking",
+      "options": "Park Booking",
+      "read_only": 1
+     },
+     {
+      "fieldname": "excursion_operation",
+      "fieldtype": "Link",
+      "label": "Excursion Operation",
+      "options": "Excursion Operation",
+      "read_only": 1
+     },
+     {
+      "fieldname": "column_break_61",
+      "fieldtype": "Column Break"
+     },
+     {
+      "fieldname": "sales_order",
+      "fieldtype": "Link",
+      "label": "Sales Order",
+      "options": "Sales Order",
+      "read_only": 1
+     },
+     {
+      "fieldname": "sales_invoice",
+      "fieldtype": "Link",
+      "label": "Sales Invoice",
+      "options": "Sales Invoice",
+      "read_only": 1
+     },
+     {
+      "collapsible": 1,
+      "depends_on": "eval:doc.booking_status=='Cancelled'",
+      "fieldname": "cancellation_section",
+      "fieldtype": "Section Break",
+      "label": "Cancellation Details"
+     },
+     {
+      "fieldname": "cancellation_reason",
+      "fieldtype": "Small Text",
+      "label": "Cancellation Reason"
+     },
+     {
+      "fieldname": "cancellation_date",
+      "fieldtype": "Datetime",
+      "label": "Cancellation Date"
+     },
+     {
+      "fieldname": "column_break_66",
+      "fieldtype": "Column Break"
+     },
+     {
+      "fieldname": "cancellation_charges",
+      "fieldtype": "Currency",
+      "label": "Cancellation Charges",
+      "options": "currency"
+     },
+     {
+      "fieldname": "refund_amount",
+      "fieldtype": "Currency",
+      "label": "Refund Amount",
+      "options": "currency"
+     },
+     {
+      "fieldname": "refund_status",
+      "fieldtype": "Select",
+      "label": "Refund Status",
+      "options": "\nPending\nProcessed\nCompleted"
+     }
+    ],
+    "index_web_pages_for_search": 1,
+    "is_submittable": 1,
+    "links": [],
+    "modified": "2025-07-30 11:15:00.000000",
+    "modified_by": "Administrator",
+    "module": "Safari Excursion",
+    "name": "Excursion Booking",
+    "naming_rule": "Expression",
+    "owner": "Administrator",
+    "permissions": [
+     {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Safari Manager",
+      "share": 1,
+      "submit": 1,
+      "write": 1
+     },
+     {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Excursion Manager",
+      "share": 1,
+      "submit": 1,
+      "write": 1
+     },
+     {
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Safari User",
+      "share": 1,
+      "submit": 1,
+      "write": 1
+     },
+     {
+      "read": 1,
+      "role": "Excursion Guide"
+     }
+    ],
+    "search_fields": "booking_number,customer_name,excursion_package,excursion_date",
+    "sort_field": "creation",
+    "sort_order": "DESC",
+    "states": [
+     {
+      "color": "Gray",
+      "title": "Draft"
+     },
+     {
+      "color": "Blue",
+      "title": "Confirmed"
+     },
+     {
+      "color": "Green",
+      "title": "Completed"
+     },
+     {
+      "color": "Red",
+      "title": "Cancelled"
+     }
+    ],
+    "title_field": "booking_number",
+    "track_changes": 1,
+    "track_seen": 1,
+    "track_views": 1
+   }

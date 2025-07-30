@@ -1,0 +1,106 @@
+{
+    "add_total_row": 1,
+    "columns": [],
+    "creation": "2025-07-30 15:00:00.000000",
+    "docstatus": 0,
+    "doctype": "Report",
+    "filters": [
+     {
+      "fieldname": "from_date",
+      "fieldtype": "Date",
+      "label": "From Date",
+      "mandatory": 0,
+      "wildcard_filter": 0
+     },
+     {
+      "fieldname": "to_date",
+      "fieldtype": "Date",
+      "label": "To Date",
+      "mandatory": 0,
+      "wildcard_filter": 0
+     },
+     {
+      "fieldname": "booking_status",
+      "fieldtype": "MultiSelect",
+      "label": "Booking Status",
+      "mandatory": 0,
+      "options": "Draft\nConfirmed\nCancelled\nCompleted",
+      "wildcard_filter": 0
+     },
+     {
+      "fieldname": "excursion_category",
+      "fieldtype": "Link",
+      "label": "Excursion Category",
+      "mandatory": 0,
+      "options": "Excursion Category",
+      "wildcard_filter": 0
+     },
+     {
+      "fieldname": "excursion_package",
+      "fieldtype": "Link",
+      "label": "Excursion Package",
+      "mandatory": 0,
+      "options": "Excursion Package",
+      "wildcard_filter": 0
+     },
+     {
+      "fieldname": "assigned_guide",
+      "fieldtype": "Link",
+      "label": "Assigned Guide",
+      "mandatory": 0,
+      "options": "Safari Guide",
+      "wildcard_filter": 0
+     },
+     {
+      "fieldname": "assigned_vehicle",
+      "fieldtype": "Link",
+      "label": "Assigned Vehicle",
+      "mandatory": 0,
+      "options": "Vehicle",
+      "wildcard_filter": 0
+     },
+     {
+      "fieldname": "payment_status",
+      "fieldtype": "Select",
+      "label": "Payment Status",
+      "mandatory": 0,
+      "options": "\nUnpaid\nPartially Paid\nPaid\nRefunded",
+      "wildcard_filter": 0
+     },
+     {
+      "fieldname": "customer",
+      "fieldtype": "Link",
+      "label": "Customer",
+      "mandatory": 0,
+      "options": "Customer",
+      "wildcard_filter": 0
+     }
+    ],
+    "idx": 0,
+    "is_standard": "Yes",
+    "json": "{}",
+    "modified": "2025-07-30 15:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Safari Excursion",
+    "name": "Excursion Booking Report",
+    "owner": "Administrator",
+    "prepared_report": 0,
+    "query": "",
+    "ref_doctype": "Excursion Booking",
+    "report_name": "Excursion Booking Report",
+    "report_type": "Script Report",
+    "roles": [
+     {
+      "role": "Safari Manager"
+     },
+     {
+      "role": "Excursion Manager"
+     },
+     {
+      "role": "Safari User"
+     },
+     {
+      "role": "System Manager"
+     }
+    ]
+   }

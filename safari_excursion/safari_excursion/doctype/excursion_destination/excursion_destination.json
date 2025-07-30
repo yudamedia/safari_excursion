@@ -1,0 +1,98 @@
+{
+ "actions": [],
+ "creation": "2025-07-30 14:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "location_name",
+  "location_type",
+  "column_break_3",
+  "duration_hours",
+  "is_main_destination",
+  "section_break_6",
+  "description",
+  "activities",
+  "column_break_9",
+  "special_requirements",
+  "entrance_fee_included"
+ ],
+ "fields": [
+  {
+   "fieldname": "location_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Location Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "location_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Location Type",
+   "options": "Tourist Attraction\nNational Park\nMarine Park\nConservancy\nBeach\nHistorical Site\nCultural Site\nAdventure Site",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "2",
+   "fieldname": "duration_hours",
+   "fieldtype": "Float",
+   "label": "Duration (Hours)",
+   "precision": "1"
+  },
+  {
+   "default": 0,
+   "fieldname": "is_main_destination",
+   "fieldtype": "Check",
+   "label": "Is Main Destination"
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "activities",
+   "fieldtype": "Small Text",
+   "label": "Activities"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "special_requirements",
+   "fieldtype": "Small Text",
+   "label": "Special Requirements"
+  },
+  {
+   "default": 1,
+   "depends_on": "eval:in_list(['National Park', 'Marine Park', 'Conservancy'], doc.location_type)",
+   "fieldname": "entrance_fee_included",
+   "fieldtype": "Check",
+   "label": "Entrance Fee Included"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 0,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-07-30 14:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Safari Excursion",
+ "name": "Excursion Destination",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

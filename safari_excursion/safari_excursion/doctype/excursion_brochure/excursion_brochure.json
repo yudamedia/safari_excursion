@@ -1,0 +1,80 @@
+{
+    "actions": [],
+    "creation": "2025-07-30 17:05:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+     "brochure_title",
+     "brochure_file",
+     "column_break_3",
+     "file_type",
+     "language",
+     "section_break_6",
+     "description",
+     "file_size_mb"
+    ],
+    "fields": [
+     {
+      "fieldname": "brochure_title",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Brochure Title",
+      "reqd": 1
+     },
+     {
+      "fieldname": "brochure_file",
+      "fieldtype": "Attach",
+      "in_list_view": 1,
+      "label": "Brochure File",
+      "reqd": 1
+     },
+     {
+      "fieldname": "column_break_3",
+      "fieldtype": "Column Break"
+     },
+     {
+      "fieldname": "file_type",
+      "fieldtype": "Select",
+      "label": "File Type",
+      "options": "PDF\nDOC\nDOCX\nJPG\nPNG\nOther"
+     },
+     {
+      "default": "English",
+      "fieldname": "language",
+      "fieldtype": "Select",
+      "label": "Language",
+      "options": "English\nSwahili\nFrench\nGerman\nSpanish\nItalian\nOther"
+     },
+     {
+      "fieldname": "section_break_6",
+      "fieldtype": "Section Break"
+     },
+     {
+      "fieldname": "description",
+      "fieldtype": "Small Text",
+      "label": "Description"
+     },
+     {
+      "fieldname": "file_size_mb",
+      "fieldtype": "Float",
+      "label": "File Size (MB)",
+      "precision": "2",
+      "read_only": 1
+     }
+    ],
+    "index_web_pages_for_search": 1,
+    "is_submittable": 0,
+    "istable": 1,
+    "links": [],
+    "modified": "2025-07-30 17:05:00.000000",
+    "modified_by": "Administrator",
+    "module": "Safari Excursion",
+    "name": "Excursion Brochure",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "brochure_title",
+    "sort_order": "ASC",
+    "states": [],
+    "track_changes": 1
+   }

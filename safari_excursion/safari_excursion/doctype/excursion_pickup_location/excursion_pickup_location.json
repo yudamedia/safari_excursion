@@ -1,0 +1,92 @@
+{
+    "actions": [],
+    "creation": "2025-07-30 16:10:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+     "location_name",
+     "location_type",
+     "column_break_3",
+     "pickup_time_adjustment",
+     "additional_charge",
+     "section_break_6",
+     "address",
+     "landmark",
+     "column_break_9",
+     "gps_coordinates",
+     "meeting_instructions"
+    ],
+    "fields": [
+     {
+      "fieldname": "location_name",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Location Name",
+      "reqd": 1
+     },
+     {
+      "fieldname": "location_type",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Location Type",
+      "options": "Hotel\nResort\nAirport\nTrain Station\nBus Station\nCity Center\nLandmark\nOther"
+     },
+     {
+      "fieldname": "column_break_3",
+      "fieldtype": "Column Break"
+     },
+     {
+      "fieldname": "pickup_time_adjustment",
+      "fieldtype": "Int",
+      "label": "Pickup Time Adjustment (Minutes)"
+     },
+     {
+      "fieldname": "additional_charge",
+      "fieldtype": "Currency",
+      "label": "Additional Charge"
+     },
+     {
+      "fieldname": "section_break_6",
+      "fieldtype": "Section Break"
+     },
+     {
+      "fieldname": "address",
+      "fieldtype": "Small Text",
+      "label": "Address"
+     },
+     {
+      "fieldname": "landmark",
+      "fieldtype": "Data",
+      "label": "Landmark"
+     },
+     {
+      "fieldname": "column_break_9",
+      "fieldtype": "Column Break"
+     },
+     {
+      "fieldname": "gps_coordinates",
+      "fieldtype": "Data",
+      "label": "GPS Coordinates"
+     },
+     {
+      "fieldname": "meeting_instructions",
+      "fieldtype": "Small Text",
+      "label": "Meeting Instructions"
+     }
+    ],
+    "index_web_pages_for_search": 1,
+    "is_submittable": 0,
+    "istable": 1,
+    "links": [],
+    "modified": "2025-07-30 16:10:00.000000",
+    "modified_by": "Administrator",
+    "module": "Safari Excursion",
+    "name": "Excursion Pickup Location",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "location_name",
+    "sort_order": "ASC",
+    "states": [],
+    "track_changes": 1
+   }

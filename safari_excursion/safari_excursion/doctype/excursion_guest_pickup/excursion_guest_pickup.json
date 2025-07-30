@@ -1,0 +1,158 @@
+{
+    "actions": [],
+    "creation": "2025-07-30 18:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+     "guest_name",
+     "pickup_location_type",
+     "pickup_location_name",
+     "column_break_4",
+     "pickup_order",
+     "estimated_pickup_time",
+     "actual_pickup_time",
+     "section_break_8",
+     "pickup_address",
+     "landmark",
+     "column_break_11",
+     "gps_coordinates",
+     "contact_phone",
+     "section_break_14",
+     "meeting_instructions",
+     "special_notes",
+     "column_break_17",
+     "pickup_status",
+     "pickup_confirmation",
+     "travel_time_to_next"
+    ],
+    "fields": [
+     {
+      "fieldname": "guest_name",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Guest Name",
+      "reqd": 1
+     },
+     {
+      "fieldname": "pickup_location_type",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Location Type",
+      "options": "Hotel\nResort\nAirbnb\nPrivate Residence\nLodge\nGuest House\nHostel\nOther",
+      "reqd": 1
+     },
+     {
+      "fieldname": "pickup_location_name",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Location Name",
+      "reqd": 1
+     },
+     {
+      "fieldname": "column_break_4",
+      "fieldtype": "Column Break"
+     },
+     {
+      "fieldname": "pickup_order",
+      "fieldtype": "Int",
+      "in_list_view": 1,
+      "label": "Pickup Order",
+      "reqd": 1
+     },
+     {
+      "fieldname": "estimated_pickup_time",
+      "fieldtype": "Time",
+      "in_list_view": 1,
+      "label": "Estimated Pickup Time",
+      "reqd": 1
+     },
+     {
+      "fieldname": "actual_pickup_time",
+      "fieldtype": "Time",
+      "label": "Actual Pickup Time"
+     },
+     {
+      "fieldname": "section_break_8",
+      "fieldtype": "Section Break",
+      "label": "Location Details"
+     },
+     {
+      "fieldname": "pickup_address",
+      "fieldtype": "Small Text",
+      "label": "Pickup Address",
+      "reqd": 1
+     },
+     {
+      "fieldname": "landmark",
+      "fieldtype": "Data",
+      "label": "Nearby Landmark"
+     },
+     {
+      "fieldname": "column_break_11",
+      "fieldtype": "Column Break"
+     },
+     {
+      "fieldname": "gps_coordinates",
+      "fieldtype": "Data",
+      "label": "GPS Coordinates"
+     },
+     {
+      "fieldname": "contact_phone",
+      "fieldtype": "Phone",
+      "label": "Contact Phone",
+      "reqd": 1
+     },
+     {
+      "fieldname": "section_break_14",
+      "fieldtype": "Section Break",
+      "label": "Instructions"
+     },
+     {
+      "fieldname": "meeting_instructions",
+      "fieldtype": "Small Text",
+      "label": "Meeting Instructions"
+     },
+     {
+      "fieldname": "special_notes",
+      "fieldtype": "Small Text",
+      "label": "Special Notes"
+     },
+     {
+      "fieldname": "column_break_17",
+      "fieldtype": "Column Break"
+     },
+     {
+      "default": "Pending",
+      "fieldname": "pickup_status",
+      "fieldtype": "Select",
+      "label": "Pickup Status",
+      "options": "Pending\nConfirmed\nEn Route\nArrived\nGuest Located\nCompleted\nNo Show"
+     },
+     {
+      "default": 0,
+      "fieldname": "pickup_confirmation",
+      "fieldtype": "Check",
+      "label": "Guest Confirmed Availability"
+     },
+     {
+      "fieldname": "travel_time_to_next",
+      "fieldtype": "Int",
+      "label": "Travel Time to Next Pickup (Minutes)"
+     }
+    ],
+    "index_web_pages_for_search": 1,
+    "is_submittable": 0,
+    "istable": 1,
+    "links": [],
+    "modified": "2025-07-30 18:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Safari Excursion",
+    "name": "Excursion Guest Pickup",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "pickup_order",
+    "sort_order": "ASC",
+    "states": [],
+    "track_changes": 1
+   }

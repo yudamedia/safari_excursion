@@ -1,0 +1,76 @@
+{
+    "actions": [],
+    "creation": "2025-07-30 16:25:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+     "exclusion_item",
+     "exclusion_category",
+     "column_break_3",
+     "is_important",
+     "display_order",
+     "section_break_6",
+     "description",
+     "estimated_cost"
+    ],
+    "fields": [
+     {
+      "fieldname": "exclusion_item",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Exclusion Item",
+      "reqd": 1
+     },
+     {
+      "fieldname": "exclusion_category",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Category",
+      "options": "Personal Expenses\nMeals\nTips\nInsurance\nEquipment Rental\nExtra Activities\nTransport\nOther"
+     },
+     {
+      "fieldname": "column_break_3",
+      "fieldtype": "Column Break"
+     },
+     {
+      "default": 0,
+      "fieldname": "is_important",
+      "fieldtype": "Check",
+      "label": "Is Important Note"
+     },
+     {
+      "fieldname": "display_order",
+      "fieldtype": "Int",
+      "label": "Display Order"
+     },
+     {
+      "fieldname": "section_break_6",
+      "fieldtype": "Section Break"
+     },
+     {
+      "fieldname": "description",
+      "fieldtype": "Small Text",
+      "label": "Description"
+     },
+     {
+      "fieldname": "estimated_cost",
+      "fieldtype": "Currency",
+      "label": "Estimated Cost"
+     }
+    ],
+    "index_web_pages_for_search": 1,
+    "is_submittable": 0,
+    "istable": 1,
+    "links": [],
+    "modified": "2025-07-30 16:25:00.000000",
+    "modified_by": "Administrator",
+    "module": "Safari Excursion",
+    "name": "Excursion Exclusion",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "display_order",
+    "sort_order": "ASC",
+    "states": [],
+    "track_changes": 1
+   }

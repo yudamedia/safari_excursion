@@ -1,0 +1,74 @@
+{
+    "actions": [],
+    "creation": "2025-07-30 16:55:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+     "image",
+     "image_title",
+     "column_break_3",
+     "display_order",
+     "is_featured",
+     "section_break_6",
+     "caption",
+     "photographer"
+    ],
+    "fields": [
+     {
+      "fieldname": "image",
+      "fieldtype": "Attach Image",
+      "label": "Image",
+      "reqd": 1
+     },
+     {
+      "fieldname": "image_title",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Image Title"
+     },
+     {
+      "fieldname": "column_break_3",
+      "fieldtype": "Column Break"
+     },
+     {
+      "fieldname": "display_order",
+      "fieldtype": "Int",
+      "label": "Display Order"
+     },
+     {
+      "default": 0,
+      "fieldname": "is_featured",
+      "fieldtype": "Check",
+      "label": "Is Featured"
+     },
+     {
+      "fieldname": "section_break_6",
+      "fieldtype": "Section Break"
+     },
+     {
+      "fieldname": "caption",
+      "fieldtype": "Small Text",
+      "label": "Caption"
+     },
+     {
+      "fieldname": "photographer",
+      "fieldtype": "Data",
+      "label": "Photographer"
+     }
+    ],
+    "index_web_pages_for_search": 1,
+    "is_submittable": 0,
+    "istable": 1,
+    "links": [],
+    "modified": "2025-07-30 16:55:00.000000",
+    "modified_by": "Administrator",
+    "module": "Safari Excursion",
+    "name": "Excursion Gallery Image",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "display_order",
+    "sort_order": "ASC",
+    "states": [],
+    "track_changes": 1
+   }

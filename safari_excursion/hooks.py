@@ -1,9 +1,191 @@
 app_name = "safari_excursion"
-app_title = "Safari Excusion"
+app_title = "Safari Excursion"
 app_publisher = "Graphic Station"
 app_description = "Excursion and single day activity management app for SafariERP"
 app_email = "safarierp@graphicstation.co.ke"
 app_license = "gpl-3.0"
+
+
+# Apps
+# ------------------
+
+# Required apps - core dependencies
+# required_apps = ["safari_core", "safari_transport", "safari_packages", "safari_parks"]
+
+# Each item in the list will be shown as an app in the apps page
+# add_to_apps_screen = [
+#     {
+#         "name": "safari_excursion",
+#         "logo": "/assets/safari_layout/images/safari_logo.svg",
+#         "title": "Safari Excursion",
+#         "route": "/app/safari-excursion",
+#         "has_permission": "safari_excursion.utils.utils.has_app_permission"
+#     }
+# ]
+
+# Workspaces
+workspaces = [
+    {
+        "doctype": "Workspace",
+        "name": "Safari Excursion",
+        "label": "Safari Excursion",
+        "icon": "globe",
+        "module": "Safari Excursion",
+        "is_hidden": 0
+    }
+]
+
+# App Branding
+app_logo_url = "/assets/safari_layout/images/safari_logo.svg"
+app_favicon = "/assets/safari_excursion/images/favicon.png"
+
+# App color scheme - Orange theme for excursions
+app_color = "#FF8C00"  # Dark Orange - suitable for day excursions
+
+# Role Home Pages
+# ---------------
+role_home_page = {
+    "Safari Manager": "/app/safari-excursion",
+    "Safari User": "/app/safari-excursion", 
+    "Safari Guide": "/app/safari-excursion",
+    "Safari Admin": "/app/safari-excursion",
+    "Excursion Manager": "/app/safari-excursion",
+    "Excursion Guide": "/app/safari-excursion"
+}
+
+# Website Route Rules
+# ------------------
+website_route_rules = [
+    {"from_route": "/safari-excursion", "to_route": "safari_excursion"},
+]
+
+# Includes in <head>
+# ------------------
+
+# include js, css files in header of desk.html
+app_include_css = "/assets/safari_excursion/css/safari_excursion.css"
+app_include_js = "/assets/safari_excursion/js/safari_excursion.js"
+
+# include js, css files in header of web template
+web_include_css = "/assets/safari_excursion/css/safari_excursion.css"
+web_include_js = "/assets/safari_excursion/js/safari_excursion.js"
+
+# include js in doctype views
+doctype_js = {
+    "Excursion Booking": "public/js/excursion_booking.js",
+    "Excursion Package": "public/js/excursion_package.js"
+}
+
+# Document Events
+# ---------------
+# Hook on document methods and events to integrate with transport system
+
+doc_events = {
+    "Excursion Booking": {
+        "on_submit": [
+            "safari_excursion.utils.transport_integration.create_excursion_transport",
+            "safari_excursion.utils.parks_integration.create_excursion_park_booking",
+            "safari_excursion.utils.notifications.send_booking_confirmation"
+        ],
+        "on_cancel": [
+            "safari_excursion.utils.transport_integration.cancel_excursion_transport",
+            "safari_excursion.utils.parks_integration.cancel_excursion_park_booking"
+        ],
+        "validate": "safari_excursion.safari_excursion.doctype.excursion_booking.excursion_booking.validate_capacity_and_timing"
+    },
+    "Excursion Operation": {
+        "validate": "safari_excursion.safari_excursion.doctype.excursion_operation.excursion_operation.validate_guide_assignment",
+        "on_submit": "safari_excursion.utils.notifications.send_operation_start_notification"
+    }
+}
+
+# Scheduled Tasks
+# ---------------
+
+scheduler_events = {
+    "hourly": [
+        "safari_excursion.utils.automation.send_pre_excursion_reminders",
+        "safari_excursion.utils.automation.update_excursion_status"
+    ],
+    "daily": [
+        "safari_excursion.utils.automation.daily_excursion_summary",
+        "safari_excursion.utils.automation.vehicle_availability_check"
+    ],
+    "weekly": [
+        "safari_excursion.utils.automation.weekly_excursion_report"
+    ]
+}
+
+# Desk Notifications
+# ------------------
+notification_config = "safari_excursion.notifications.get_notification_config"
+
+# Permissions
+# -----------
+# Permissions evaluated in scripted ways
+
+permission_query_conditions = {
+    "Excursion Booking": "safari_excursion.utils.permissions.get_permission_query_conditions",
+}
+
+has_permission = {
+    "Excursion Booking": "safari_excursion.utils.permissions.has_permission",
+}
+
+# Override DocType Classes
+# ----------------------
+# Extend existing transport functionality for excursions
+
+override_doctype_class = {
+    "Transport Booking": "safari_excursion.overrides.transport_booking.ExcursionTransportBooking"
+}
+
+# Override whitelisted methods
+# ---------------------------
+override_whitelisted_methods = {
+    "safari_transport.utils.transfer_automation.create_airport_transfer_from_flight": 
+        "safari_excursion.utils.transport_integration.create_excursion_transfer_from_booking"
+}
+
+# Installation
+# ------------
+before_install = "safari_excursion.setup.install.before_install"
+after_install = "safari_excursion.setup.install.after_install"
+
+# Uninstallation
+# ------------
+before_uninstall = "safari_excursion.setup.uninstall.before_uninstall"
+after_uninstall = "safari_excursion.setup.uninstall.after_uninstall"
+
+# Integration Setup
+# ------------------
+after_app_install = "safari_excursion.setup.install.setup_integration"
+
+# User Data Protection
+# --------------------
+user_data_fields = [
+    {
+        "doctype": "Excursion Booking",
+        "filter_by": "customer",
+        "redact_fields": ["customer_phone", "customer_email"],
+        "partial": 1,
+    }
+]
+
+# Website generator for public excursion packages
+website_generators = ["Excursion Package"]
+
+# Fixtures for master data
+fixtures = [
+    {
+        "doctype": "Excursion Category",
+        "filters": [
+            ["name", "in", ["Cultural Tours", "Adventure Activities", "Wildlife Experiences", "Marine Activities", "City Tours"]]
+        ]
+    }
+]
+
+
 
 # Apps
 # ------------------
@@ -15,7 +197,7 @@ app_license = "gpl-3.0"
 # 	{
 # 		"name": "safari_excursion",
 # 		"logo": "/assets/safari_excursion/logo.png",
-# 		"title": "Safari Excusion",
+# 		"title": "Safari Excursion",
 # 		"route": "/safari_excursion",
 # 		"has_permission": "safari_excursion.api.permission.has_app_permission"
 # 	}

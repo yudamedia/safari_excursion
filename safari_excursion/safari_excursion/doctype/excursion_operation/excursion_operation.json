@@ -1,0 +1,374 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:EXO-{excursion_booking}-{YYYY}-{MM}-{DD}",
+ "creation": "2025-07-30 12:30:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "operation_details_section",
+  "excursion_booking",
+  "excursion_package",
+  "operation_date",
+  "column_break_4",
+  "departure_time",
+  "actual_departure_time",
+  "estimated_return_time",
+  "actual_return_time",
+  "section_break_9",
+  "guest_count",
+  "operation_status",
+  "column_break_12",
+  "weather_conditions",
+  "operation_notes",
+  "assignments_section",
+  "assigned_guide",
+  "assigned_vehicle",
+  "column_break_17",
+  "backup_guide",
+  "driver_details",
+  "tracking_section",
+  "pickup_completed",
+  "pickup_completion_time",
+  "excursion_started",
+  "excursion_start_time",
+  "column_break_24",
+  "excursion_completed",
+  "excursion_completion_time",
+  "dropoff_completed",
+  "dropoff_completion_time",
+  "feedback_section",
+  "guest_feedback",
+  "guide_rating",
+  "column_break_31",
+  "issues_encountered",
+  "recommendations",
+  "financials_section",
+  "additional_costs",
+  "tips_received",
+  "column_break_36",
+  "equipment_used",
+  "fuel_consumption"
+ ],
+ "fields": [
+  {
+   "fieldname": "operation_details_section",
+   "fieldtype": "Section Break",
+   "label": "Operation Details"
+  },
+  {
+   "fieldname": "excursion_booking",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Excursion Booking",
+   "options": "Excursion Booking",
+   "reqd": 1
+  },
+  {
+   "fieldname": "excursion_package",
+   "fieldtype": "Link",
+   "label": "Excursion Package",
+   "options": "Excursion Package",
+   "read_only": 1
+  },
+  {
+   "fieldname": "operation_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Operation Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "departure_time",
+   "fieldtype": "Time",
+   "label": "Scheduled Departure",
+   "read_only": 1
+  },
+  {
+   "fieldname": "actual_departure_time",
+   "fieldtype": "Time",
+   "label": "Actual Departure"
+  },
+  {
+   "fieldname": "estimated_return_time",
+   "fieldtype": "Time",
+   "label": "Estimated Return",
+   "read_only": 1
+  },
+  {
+   "fieldname": "actual_return_time",
+   "fieldtype": "Time",
+   "label": "Actual Return"
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "guest_count",
+   "fieldtype": "Int",
+   "label": "Guest Count",
+   "read_only": 1
+  },
+  {
+   "default": "Scheduled",
+   "fieldname": "operation_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Operation Status",
+   "options": "Scheduled\nIn Progress\nCompleted\nCancelled\nDelayed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "weather_conditions",
+   "fieldtype": "Select",
+   "label": "Weather Conditions",
+   "options": "\nSunny\nPartly Cloudy\nCloudy\nRainy\nStormy\nWindy"
+  },
+  {
+   "fieldname": "operation_notes",
+   "fieldtype": "Small Text",
+   "label": "Operation Notes"
+  },
+  {
+   "fieldname": "assignments_section",
+   "fieldtype": "Section Break",
+   "label": "Assignments"
+  },
+  {
+   "fieldname": "assigned_guide",
+   "fieldtype": "Link",
+   "label": "Assigned Guide",
+   "options": "Safari Guide"
+  },
+  {
+   "fieldname": "assigned_vehicle",
+   "fieldtype": "Link",
+   "label": "Assigned Vehicle",
+   "options": "Vehicle"
+  },
+  {
+   "fieldname": "column_break_17",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "backup_guide",
+   "fieldtype": "Link",
+   "label": "Backup Guide",
+   "options": "Safari Guide"
+  },
+  {
+   "fieldname": "driver_details",
+   "fieldtype": "Small Text",
+   "label": "Driver Details"
+  },
+  {
+   "fieldname": "tracking_section",
+   "fieldtype": "Section Break",
+   "label": "Progress Tracking"
+  },
+  {
+   "default": 0,
+   "fieldname": "pickup_completed",
+   "fieldtype": "Check",
+   "label": "Pickup Completed"
+  },
+  {
+   "depends_on": "pickup_completed",
+   "fieldname": "pickup_completion_time",
+   "fieldtype": "Datetime",
+   "label": "Pickup Completion Time"
+  },
+  {
+   "default": 0,
+   "fieldname": "excursion_started",
+   "fieldtype": "Check",
+   "label": "Excursion Started"
+  },
+  {
+   "depends_on": "excursion_started",
+   "fieldname": "excursion_start_time",
+   "fieldtype": "Datetime",
+   "label": "Excursion Start Time"
+  },
+  {
+   "fieldname": "column_break_24",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": 0,
+   "fieldname": "excursion_completed",
+   "fieldtype": "Check",
+   "label": "Excursion Completed"
+  },
+  {
+   "depends_on": "excursion_completed",
+   "fieldname": "excursion_completion_time",
+   "fieldtype": "Datetime",
+   "label": "Excursion Completion Time"
+  },
+  {
+   "default": 0,
+   "fieldname": "dropoff_completed",
+   "fieldtype": "Check",
+   "label": "Dropoff Completed"
+  },
+  {
+   "depends_on": "dropoff_completed",
+   "fieldname": "dropoff_completion_time",
+   "fieldtype": "Datetime",
+   "label": "Dropoff Completion Time"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "feedback_section",
+   "fieldtype": "Section Break",
+   "label": "Feedback & Rating"
+  },
+  {
+   "fieldname": "guest_feedback",
+   "fieldtype": "Text",
+   "label": "Guest Feedback"
+  },
+  {
+   "fieldname": "guide_rating",
+   "fieldtype": "Rating",
+   "label": "Guide Rating"
+  },
+  {
+   "fieldname": "column_break_31",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "issues_encountered",
+   "fieldtype": "Small Text",
+   "label": "Issues Encountered"
+  },
+  {
+   "fieldname": "recommendations",
+   "fieldtype": "Small Text",
+   "label": "Recommendations"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "financials_section",
+   "fieldtype": "Section Break",
+   "label": "Financial Details"
+  },
+  {
+   "fieldname": "additional_costs",
+   "fieldtype": "Currency",
+   "label": "Additional Costs"
+  },
+  {
+   "fieldname": "tips_received",
+   "fieldtype": "Currency",
+   "label": "Tips Received"
+  },
+  {
+   "fieldname": "column_break_36",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "equipment_used",
+   "fieldtype": "Table",
+   "label": "Equipment Used",
+   "options": "Excursion Equipment Used"
+  },
+  {
+   "fieldname": "fuel_consumption",
+   "fieldtype": "Float",
+   "label": "Fuel Consumption (Liters)",
+   "precision": "2"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-07-30 12:30:00.000000",
+ "modified_by": "Administrator",
+ "module": "Safari Excursion",
+ "name": "Excursion Operation",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Safari Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Excursion Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Safari User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Excursion Guide",
+   "write": 1
+  }
+ ],
+ "search_fields": "excursion_booking,operation_date,assigned_guide",
+ "sort_field": "operation_date",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Gray",
+   "title": "Scheduled"
+  },
+  {
+   "color": "Blue",
+   "title": "In Progress"
+  },
+  {
+   "color": "Green",
+   "title": "Completed"
+  },
+  {
+   "color": "Red",
+   "title": "Cancelled"
+  },
+  {
+   "color": "Orange",
+   "title": "Delayed"
+  }
+ ],
+ "title_field": "excursion_booking",
+ "track_changes": 1,
+ "track_seen": 1
+}

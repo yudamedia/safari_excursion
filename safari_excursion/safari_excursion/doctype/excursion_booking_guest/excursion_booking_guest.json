@@ -1,0 +1,160 @@
+{
+    "actions": [],
+    "creation": "2025-07-30 16:45:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+     "guest",
+     "guest_name",
+     "age_category",
+     "column_break_4",
+     "age",
+     "gender",
+     "section_break_7",
+     "nationality",
+     "passport_number",
+     "column_break_10",
+     "phone",
+     "email",
+     "section_break_13",
+     "dietary_restrictions",
+     "medical_conditions",
+     "column_break_16",
+     "special_requirements",
+     "emergency_contact",
+     "section_break_19",
+     "room_sharing",
+     "accommodation_preferences"
+    ],
+    "fields": [
+     {
+      "fieldname": "guest",
+      "fieldtype": "Link",
+      "label": "Guest",
+      "options": "Safari Guest"
+     },
+     {
+      "fieldname": "guest_name",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Guest Name",
+      "reqd": 1
+     },
+     {
+      "fieldname": "age_category",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Age Category",
+      "options": "Adult\nChild\nInfant",
+      "reqd": 1
+     },
+     {
+      "fieldname": "column_break_4",
+      "fieldtype": "Column Break"
+     },
+     {
+      "fieldname": "age",
+      "fieldtype": "Int",
+      "in_list_view": 1,
+      "label": "Age"
+     },
+     {
+      "fieldname": "gender",
+      "fieldtype": "Select",
+      "label": "Gender",
+      "options": "\nMale\nFemale\nOther\nPrefer not to say"
+     },
+     {
+      "fieldname": "section_break_7",
+      "fieldtype": "Section Break",
+      "label": "Contact Information"
+     },
+     {
+      "fieldname": "nationality",
+      "fieldtype": "Link",
+      "label": "Nationality",
+      "options": "Country"
+     },
+     {
+      "fieldname": "passport_number",
+      "fieldtype": "Data",
+      "label": "Passport/ID Number"
+     },
+     {
+      "fieldname": "column_break_10",
+      "fieldtype": "Column Break"
+     },
+     {
+      "fieldname": "phone",
+      "fieldtype": "Phone",
+      "label": "Phone Number"
+     },
+     {
+      "fieldname": "email",
+      "fieldtype": "Data",
+      "label": "Email",
+      "options": "Email"
+     },
+     {
+      "fieldname": "section_break_13",
+      "fieldtype": "Section Break",
+      "label": "Special Requirements"
+     },
+     {
+      "fieldname": "dietary_restrictions",
+      "fieldtype": "Small Text",
+      "label": "Dietary Restrictions"
+     },
+     {
+      "fieldname": "medical_conditions",
+      "fieldtype": "Small Text",
+      "label": "Medical Conditions"
+     },
+     {
+      "fieldname": "column_break_16",
+      "fieldtype": "Column Break"
+     },
+     {
+      "fieldname": "special_requirements",
+      "fieldtype": "Small Text",
+      "label": "Special Requirements"
+     },
+     {
+      "fieldname": "emergency_contact",
+      "fieldtype": "Small Text",
+      "label": "Emergency Contact"
+     },
+     {
+      "collapsible": 1,
+      "fieldname": "section_break_19",
+      "fieldtype": "Section Break",
+      "label": "Additional Information"
+     },
+     {
+      "fieldname": "room_sharing",
+      "fieldtype": "Select",
+      "label": "Room Sharing Preference",
+      "options": "\nSingle Room\nShared Room\nFamily Room\nNo Preference"
+     },
+     {
+      "fieldname": "accommodation_preferences",
+      "fieldtype": "Small Text",
+      "label": "Accommodation Preferences"
+     }
+    ],
+    "index_web_pages_for_search": 1,
+    "is_submittable": 0,
+    "istable": 1,
+    "links": [],
+    "modified": "2025-07-30 16:45:00.000000",
+    "modified_by": "Administrator",
+    "module": "Safari Excursion",
+    "name": "Excursion Booking Guest",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "guest_name",
+    "sort_order": "ASC",
+    "states": [],
+    "track_changes": 1
+   }

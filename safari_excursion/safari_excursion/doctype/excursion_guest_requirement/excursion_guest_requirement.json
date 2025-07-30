@@ -1,0 +1,77 @@
+{
+    "actions": [],
+    "creation": "2025-07-30 16:35:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+     "requirement_item",
+     "requirement_category",
+     "column_break_3",
+     "is_mandatory",
+     "is_recommended",
+     "section_break_6",
+     "description",
+     "where_to_buy"
+    ],
+    "fields": [
+     {
+      "fieldname": "requirement_item",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Requirement Item",
+      "reqd": 1
+     },
+     {
+      "fieldname": "requirement_category",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Category",
+      "options": "Clothing\nFootwear\nSun Protection\nPersonal Items\nMedication\nDocuments\nFood & Drinks\nTechnology\nOther"
+     },
+     {
+      "fieldname": "column_break_3",
+      "fieldtype": "Column Break"
+     },
+     {
+      "default": 0,
+      "fieldname": "is_mandatory",
+      "fieldtype": "Check",
+      "label": "Is Mandatory"
+     },
+     {
+      "default": 1,
+      "fieldname": "is_recommended",
+      "fieldtype": "Check",
+      "label": "Is Recommended"
+     },
+     {
+      "fieldname": "section_break_6",
+      "fieldtype": "Section Break"
+     },
+     {
+      "fieldname": "description",
+      "fieldtype": "Small Text",
+      "label": "Description"
+     },
+     {
+      "fieldname": "where_to_buy",
+      "fieldtype": "Small Text",
+      "label": "Where to Buy/Get"
+     }
+    ],
+    "index_web_pages_for_search": 1,
+    "is_submittable": 0,
+    "istable": 1,
+    "links": [],
+    "modified": "2025-07-30 16:35:00.000000",
+    "modified_by": "Administrator",
+    "module": "Safari Excursion",
+    "name": "Excursion Guest Requirement",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "requirement_item",
+    "sort_order": "ASC",
+    "states": [],
+    "track_changes": 1
+   }

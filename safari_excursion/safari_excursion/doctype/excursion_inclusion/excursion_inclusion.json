@@ -1,0 +1,70 @@
+{
+    "actions": [],
+    "creation": "2025-07-30 16:20:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+     "inclusion_item",
+     "inclusion_category",
+     "column_break_3",
+     "is_highlighted",
+     "display_order",
+     "section_break_6",
+     "description"
+    ],
+    "fields": [
+     {
+      "fieldname": "inclusion_item",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Inclusion Item",
+      "reqd": 1
+     },
+     {
+      "fieldname": "inclusion_category",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Category",
+      "options": "Transport\nMeals\nActivities\nEquipment\nGuide Services\nEntrance Fees\nAccommodation\nOther"
+     },
+     {
+      "fieldname": "column_break_3",
+      "fieldtype": "Column Break"
+     },
+     {
+      "default": 0,
+      "fieldname": "is_highlighted",
+      "fieldtype": "Check",
+      "label": "Is Highlighted"
+     },
+     {
+      "fieldname": "display_order",
+      "fieldtype": "Int",
+      "label": "Display Order"
+     },
+     {
+      "fieldname": "section_break_6",
+      "fieldtype": "Section Break"
+     },
+     {
+      "fieldname": "description",
+      "fieldtype": "Small Text",
+      "label": "Description"
+     }
+    ],
+    "index_web_pages_for_search": 1,
+    "is_submittable": 0,
+    "istable": 1,
+    "links": [],
+    "modified": "2025-07-30 16:20:00.000000",
+    "modified_by": "Administrator",
+    "module": "Safari Excursion",
+    "name": "Excursion Inclusion",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "display_order",
+    "sort_order": "ASC",
+    "states": [],
+    "track_changes": 1
+   }
