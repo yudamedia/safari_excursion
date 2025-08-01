@@ -1,85 +1,114 @@
 {
-    "actions": [],
-    "creation": "2025-07-30 17:15:00.000000",
-    "doctype": "DocType",
-    "editable_grid": 1,
-    "engine": "InnoDB",
-    "field_order": [
-     "season_name",
-     "start_date",
-     "end_date",
-     "column_break_4",
-     "is_available",
-     "capacity_adjustment",
-     "section_break_7",
-     "description",
-     "weather_conditions"
-    ],
-    "fields": [
-     {
-      "fieldname": "season_name",
-      "fieldtype": "Data",
-      "in_list_view": 1,
-      "label": "Season Name",
-      "reqd": 1
-     },
-     {
-      "fieldname": "start_date",
-      "fieldtype": "Date",
-      "in_list_view": 1,
-      "label": "Start Date",
-      "reqd": 1
-     },
-     {
-      "fieldname": "end_date",
-      "fieldtype": "Date",
-      "in_list_view": 1,
-      "label": "End Date",
-      "reqd": 1
-     },
-     {
-      "fieldname": "column_break_4",
-      "fieldtype": "Column Break"
-     },
-     {
-      "default": 1,
-      "fieldname": "is_available",
-      "fieldtype": "Check",
-      "label": "Is Available"
-     },
-     {
-      "fieldname": "capacity_adjustment",
-      "fieldtype": "Float",
-      "label": "Capacity Adjustment (%)",
-      "precision": "2"
-     },
-     {
-      "fieldname": "section_break_7",
-      "fieldtype": "Section Break"
-     },
-     {
-      "fieldname": "description",
-      "fieldtype": "Small Text",
-      "label": "Description"
-     },
-     {
-      "fieldname": "weather_conditions",
-      "fieldtype": "Small Text",
-      "label": "Expected Weather Conditions"
-     }
-    ],
-    "index_web_pages_for_search": 1,
-    "is_submittable": 0,
-    "istable": 1,
-    "links": [],
-    "modified": "2025-07-30 17:15:00.000000",
-    "modified_by": "Administrator",
-    "module": "Safari Excursion",
-    "name": "Excursion Season",
-    "owner": "Administrator",
-    "permissions": [],
-    "sort_field": "start_date",
-    "sort_order": "ASC",
-    "states": [],
-    "track_changes": 1
-   }
+ "actions": [],
+ "allow_import": 1,
+ "autoname": "format:ES-{season_name}",
+ "creation": "2025-01-14 05:36:20.209028",
+ "description": "Seasons for excursion pricing and availability",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "season_name",
+  "season_type",
+  "start_date",
+  "end_date",
+  "column_break_5",
+  "is_active",
+  "description",
+  "applicable_locations",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "season_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Season Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "High",
+   "fieldname": "season_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Season Type",
+   "options": "\nHigh\nPeak\nLow\nShoulder\nGreen\nSpecial",
+   "reqd": 1
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "End Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is Active"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "applicable_locations",
+   "fieldtype": "Table",
+   "label": "Applicable Locations",
+   "options": "Excursion Season Location"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text Editor",
+   "label": "Notes"
+  }
+ ],
+ "links": [],
+ "modified": "2025-05-27 12:11:34.339967",
+ "modified_by": "Administrator",
+ "module": "Safari Excursion",
+ "name": "Excursion Season",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "Safari Manager",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Safari User"
+  }
+ ],
+ "search_fields": "season_name,season_type,description",
+ "show_name_in_global_search": 1,
+ "sort_field": "start_date",
+ "sort_order": "ASC",
+ "states": []
+}

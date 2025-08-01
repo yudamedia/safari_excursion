@@ -1,0 +1,144 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "autoname": "format:ERC-{excursion_package}",
+ "creation": "2025-01-14 05:36:20.209028",
+ "description": "Rate configuration for excursion packages",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "excursion_package",
+  "pricing_model",
+  "child_policy_section",
+  "has_child_rates",
+  "child_rate_type",
+  "child_age_brackets",
+  "supplement_section",
+  "has_seasonal_supplements",
+  "has_holiday_surcharges",
+  "has_group_discounts",
+  "group_discount_tiers",
+  "local_rates",
+  "international_rates"
+ ],
+ "fields": [
+  {
+   "fieldname": "excursion_package",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Excursion Package",
+   "options": "Excursion Package",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "Per Person",
+   "fieldname": "pricing_model",
+   "fieldtype": "Select",
+   "label": "Pricing Model",
+   "options": "\nPer Person\nPer Group",
+   "reqd": 1
+  },
+  {
+   "fieldname": "child_policy_section",
+   "fieldtype": "Section Break",
+   "label": "Child Policy"
+  },
+  {
+   "default": "1",
+   "fieldname": "has_child_rates",
+   "fieldtype": "Check",
+   "label": "Has Child Rates"
+  },
+  {
+   "depends_on": "eval:doc.has_child_rates==1",
+   "fieldname": "child_rate_type",
+   "fieldtype": "Select",
+   "label": "Child Rate Type",
+   "options": "\nFixed Rate\nPercentage of Adult Rate"
+  },
+  {
+   "depends_on": "eval:doc.has_child_rates==1",
+   "fieldname": "child_age_brackets",
+   "fieldtype": "Table",
+   "label": "Child Age Brackets",
+   "options": "Child Age Bracket"
+  },
+  {
+   "fieldname": "supplement_section",
+   "fieldtype": "Section Break",
+   "label": "Supplements and Surcharges"
+  },
+  {
+   "default": "0",
+   "fieldname": "has_seasonal_supplements",
+   "fieldtype": "Check",
+   "label": "Has Seasonal Supplements"
+  },
+  {
+   "default": "0",
+   "fieldname": "has_holiday_surcharges",
+   "fieldtype": "Check",
+   "label": "Has Holiday Surcharges"
+  },
+  {
+   "default": "0",
+   "fieldname": "has_group_discounts",
+   "fieldtype": "Check",
+   "label": "Has Group Discounts"
+  },
+  {
+   "depends_on": "eval:doc.has_group_discounts==1",
+   "fieldname": "group_discount_tiers",
+   "fieldtype": "Table",
+   "label": "Group Discount Tiers",
+   "options": "Excursion Group Discount Tier"
+  },
+  {
+   "fieldname": "local_rates",
+   "fieldtype": "Table",
+   "label": "Local Rates",
+   "options": "Excursion Local Per Person Rate"
+  },
+  {
+   "fieldname": "international_rates",
+   "fieldtype": "Table",
+   "label": "International Rates",
+   "options": "Excursion International Per Person Rate"
+  }
+ ],
+ "links": [],
+ "modified": "2025-08-01 12:46:40.276864",
+ "modified_by": "Administrator",
+ "module": "Safari Excursion",
+ "name": "Excursion Rate Configuration",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "Safari Manager",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Safari User"
+  }
+ ],
+ "search_fields": "excursion_package",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -43,13 +43,8 @@
   "equipment_provided",
   "guest_requirements",
   "pricing_section",
-  "base_price_adult",
-  "base_price_child",
-  "currency",
+  "rate_configuration",
   "column_break_34",
-  "seasonal_pricing",
-  "group_discount_applicable",
-  "minimum_group_size",
   "images_and_media_section",
   "featured_image",
   "gallery_images",
@@ -274,45 +269,15 @@
    "label": "Pricing"
   },
   {
-   "fieldname": "base_price_adult",
-   "fieldtype": "Currency",
-   "label": "Base Price (Adult)",
-   "reqd": 1
-  },
-  {
-   "fieldname": "base_price_child",
-   "fieldtype": "Currency",
-   "label": "Base Price (Child)"
-  },
-  {
-   "default": "USD",
-   "fieldname": "currency",
+   "fieldname": "rate_configuration",
    "fieldtype": "Link",
-   "label": "Currency",
-   "options": "Currency",
-   "reqd": 1
+   "label": "Rate Configuration",
+   "options": "Excursion Rate Configuration",
+   "description": "Link to the rate configuration for this excursion package"
   },
   {
    "fieldname": "column_break_34",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "seasonal_pricing",
-   "fieldtype": "Table",
-   "label": "Seasonal Pricing",
-   "options": "Excursion Seasonal Price"
-  },
-  {
-   "default": 0,
-   "fieldname": "group_discount_applicable",
-   "fieldtype": "Check",
-   "label": "Group Discount Applicable"
-  },
-  {
-   "depends_on": "group_discount_applicable",
-   "fieldname": "minimum_group_size",
-   "fieldtype": "Int",
-   "label": "Minimum Group Size for Discount"
   },
   {
    "fieldname": "images_and_media_section",

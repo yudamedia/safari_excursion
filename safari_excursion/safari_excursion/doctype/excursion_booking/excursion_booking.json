@@ -43,14 +43,15 @@
      "dropoff_location",
      "estimated_return_time",
      "transport_notes",
-     "pricing_section",
-     "currency",
-     "base_amount",
-     "child_discount",
-     "column_break_35",
-     "group_discount",
-     "additional_charges",
-     "total_amount",
+       "pricing_section",
+  "residence_type",
+  "currency",
+  "base_amount",
+  "child_discount",
+  "column_break_35",
+  "group_discount",
+  "additional_charges",
+  "total_amount",
      "payment_section",
      "payment_status",
      "deposit_required",
@@ -308,19 +309,27 @@
       "fieldtype": "Small Text",
       "label": "Transport Notes"
      },
-     {
-      "fieldname": "pricing_section",
-      "fieldtype": "Section Break",
-      "label": "Pricing"
-     },
-     {
-      "default": "USD",
-      "fieldname": "currency",
-      "fieldtype": "Link",
-      "label": "Currency",
-      "options": "Currency",
-      "reqd": 1
-     },
+       {
+   "fieldname": "pricing_section",
+   "fieldtype": "Section Break",
+   "label": "Pricing"
+  },
+  {
+   "fieldname": "residence_type",
+   "fieldtype": "Select",
+   "label": "Residence Type",
+   "options": "\nLocal\nInternational",
+   "default": "International",
+   "reqd": 1
+  },
+  {
+   "default": "USD",
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency",
+   "reqd": 1
+  },
      {
       "fieldname": "base_amount",
       "fieldtype": "Currency",

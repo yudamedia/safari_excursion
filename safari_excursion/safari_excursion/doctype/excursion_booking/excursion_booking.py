@@ -4,8 +4,7 @@ import frappe
 from frappe import _
 from frappe.model.document import Document
 from frappe.utils import flt, getdate, add_to_date, time_diff_in_hours, get_time, now_datetime
-from safari_excursion.utils.pricing_calculator import ExcursionPricingCalculator
-from safari_excursion.utils.transport_integration import ExcursionTransportManager
+from safari_excursion.safari_excursion.utils.pricing_utils import get_excursion_pricing
 
 class ExcursionBooking(Document):
     """
@@ -103,17 +102,36 @@ class ExcursionBooking(Document):
     
     def calculate_pricing(self):
         """Calculate total pricing for the excursion"""
-        calculator = ExcursionPricingCalculator(self)
-        pricing_details = calculator.calculate_total_price()
+        if not self.excursion_package or not self.excursion_date:
+            return
         
-        self.base_amount = pricing_details.get('base_amount', 0)
-        self.child_discount = pricing_details.get('child_discount', 0)
-        self.group_discount = pricing_details.get('group_discount', 0)
-        self.additional_charges = pricing_details.get('additional_charges', 0)
-        self.total_amount = pricing_details.get('total_amount', 0)
+        # Get children ages from guests table
+        children_ages = []
+        if self.guests:
+            children_ages = [guest.age for guest in self.guests if guest.guest_type == "Child"]
         
-        # Calculate balance due
-        self.balance_due = self.total_amount - (self.deposit_amount or 0)
+        # Calculate group size for discounts
+        group_size = self.adult_count + self.child_count
+        
+        try:
+            pricing = get_excursion_pricing(
+                excursion_package=self.excursion_package,
+                excursion_date=self.excursion_date,
+                adults=self.adult_count,
+                children=children_ages,
+                residence_type=self.residence_type,
+                group_size=group_size
+            )
+            
+            # Update pricing fields
+            self.currency = pricing.get("currency", "USD")
+            self.base_amount = pricing.get("adult_total", 0)
+            self.child_discount = pricing.get("child_total", 0)
+            self.group_discount = pricing.get("group_discount_amount", 0)
+            self.total_amount = pricing.get("total", 0)
+            
+        except Exception as e:
+            frappe.msgprint(f"Error calculating pricing: {str(e)}", indicator="red")
     
     def set_estimated_times(self):
         """Set estimated pickup and return times"""

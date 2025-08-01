@@ -1,0 +1,73 @@
+{
+    "actions": [],
+    "creation": "2025-01-29 03:21:51.883673",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+     "supplement_name",
+     "supplement_type",
+     "adult_supplement",
+     "child_supplement",
+     "is_reduction"
+    ],
+    "fields": [
+     {
+      "fieldname": "supplement_name",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Supplement Name",
+      "reqd": 1,
+      "permlevel": 0,
+      "allow_on_submit": 0
+     },
+     {
+      "fieldname": "supplement_type",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Supplement Type",
+      "options": "\nFixed Amount\nPercentage of Base Rate",
+      "reqd": 1,
+      "permlevel": 0,
+      "allow_on_submit": 0
+     },
+     {
+      "fieldname": "adult_supplement",
+      "fieldtype": "Currency",
+      "in_list_view": 1,
+      "label": "Adult Supplement",
+      "options": "currency",
+      "reqd": 1,
+      "permlevel": 0,
+      "allow_on_submit": 0
+     },
+     {
+      "fieldname": "child_supplement",
+      "fieldtype": "Currency",
+      "label": "Child Supplement",
+      "options": "currency",
+      "permlevel": 0,
+      "allow_on_submit": 0
+     },
+     {
+      "default": "0",
+      "description": "Check if this is a reduction in rate",
+      "fieldname": "is_reduction",
+      "fieldtype": "Check",
+      "in_list_view": 1,
+      "label": "Is Reduction",
+      "permlevel": 0,
+      "allow_on_submit": 0
+     }
+    ],
+    "istable": 1,
+    "links": [],
+    "modified": "2025-01-29 03:31:22.957897",
+    "modified_by": "Administrator",
+    "module": "Safari Excursion",
+    "name": "Seasonal Supplement",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": []
+} 

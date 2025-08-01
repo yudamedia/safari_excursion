@@ -1,0 +1,129 @@
+{
+    "doctype": "DocType",
+    "module": "Safari Excursion",
+    "name": "Excursion Local Per Person Rate",
+    "custom": 1,
+    "istable": 1,
+    "editable_grid": 1,
+    "track_changes": 1,
+    "fields": [
+        {
+            "fieldname": "season",
+            "fieldtype": "Link",
+            "label": "Season",
+            "options": "Excursion Season",
+            "reqd": 1,
+            "in_list_view": 1,
+            "permlevel": 0,
+            "allow_on_submit": 0
+        },
+        {
+            "fieldname": "excursion_package",
+            "fieldtype": "Link",
+            "label": "Excursion Package",
+            "options": "Excursion Package",
+            "reqd": 1,
+            "in_list_view": 1,
+            "permlevel": 0,
+            "allow_on_submit": 0
+        },
+        {
+            "fieldname": "currency",
+            "fieldtype": "Link",
+            "label": "Currency",
+            "options": "Currency",
+            "default": "KES",
+            "read_only": 1,
+            "permlevel": 0,
+            "allow_on_submit": 0
+        },
+        {
+            "fieldname": "rates_section",
+            "label": "Per Person Rates",
+            "fieldtype": "Section Break",
+            "permlevel": 0,
+            "allow_on_submit": 0
+        },
+        {
+            "fieldname": "adult_rate",
+            "fieldtype": "Currency",
+            "label": "Adult Rate",
+            "reqd": 1,
+            "options": "currency",
+            "in_list_view": 1,
+            "permlevel": 0,
+            "allow_on_submit": 0
+        },
+        {
+            "fieldname": "child_rates_section",
+            "label": "Child Rates",
+            "fieldtype": "Section Break",
+            "permlevel": 0,
+            "allow_on_submit": 0
+        },
+        {
+            "fieldname": "child_rates",
+            "fieldtype": "Table",
+            "label": "Child Rates",
+            "options": "Child Rate Detail",
+            "permlevel": 0,
+            "allow_on_submit": 0
+        },
+        {
+            "fieldname": "seasonal_supplements_section",
+            "label": "Seasonal Supplements",
+            "fieldtype": "Section Break",
+            "permlevel": 0,
+            "allow_on_submit": 0
+        },
+        {
+            "fieldname": "seasonal_supplements",
+            "fieldtype": "Table",
+            "label": "Seasonal Supplements",
+            "options": "Seasonal Supplement",
+            "permlevel": 0,
+            "allow_on_submit": 0
+        },
+        {
+            "fieldname": "holiday_surcharges_section",
+            "label": "Holiday Surcharges",
+            "fieldtype": "Section Break",
+            "permlevel": 0,
+            "allow_on_submit": 0
+        },
+        {
+            "fieldname": "holiday_surcharges",
+            "fieldtype": "Table",
+            "label": "Holiday Surcharges",
+            "options": "Holiday Surcharge Period",
+            "permlevel": 0,
+            "allow_on_submit": 0
+        }
+    ],
+    "permissions": [
+        {
+            "role": "System Manager",
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 1,
+            "permlevel": 0
+        },
+        {
+            "role": "Safari Manager",
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 1,
+            "permlevel": 0
+        },
+        {
+            "role": "Safari User",
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 0,
+            "permlevel": 0
+        }
+    ]
+} 
