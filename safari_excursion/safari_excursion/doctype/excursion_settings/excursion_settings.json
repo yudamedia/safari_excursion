@@ -1,0 +1,537 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "Prompt",
+    "creation": "2025-07-30 20:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+     "general_settings_section",
+     "default_currency",
+     "default_booking_deadline_hours",
+     "column_break_general",
+     "max_capacity_default",
+     "enable_online_booking",
+     "pricing_settings_section",
+     "child_discount_percentage",
+     "enable_group_discounts",
+     "column_break_pricing",
+     "enable_seasonal_pricing",
+     "tax_included_in_price",
+     "group_discount_section",
+     "group_discount_tiers",
+     "time_premium_section",
+     "enable_time_premiums",
+     "early_morning_cutoff",
+     "early_morning_premium",
+     "column_break_time",
+     "late_evening_cutoff",
+     "late_evening_premium",
+     "transport_settings_section",
+     "default_pickup_required",
+     "pickup_time_buffer_minutes",
+     "column_break_transport",
+     "enable_transport_zones",
+     "auto_assign_vehicles",
+     "transport_zones_section",
+     "transport_zones",
+     "guide_settings_section",
+     "auto_assign_guides",
+     "guide_language_matching",
+     "column_break_guide",
+     "max_daily_assignments_per_guide",
+     "require_guide_confirmation",
+     "notification_settings_section",
+     "send_booking_confirmations",
+     "send_reminder_notifications",
+     "reminder_hours_before",
+     "column_break_notification",
+     "send_guide_notifications",
+     "send_customer_updates",
+     "sms_notifications_enabled",
+     "cancellation_policy_section",
+     "allow_customer_cancellation",
+     "free_cancellation_hours",
+     "column_break_cancellation",
+     "cancellation_charge_percentage",
+     "no_show_charge_percentage",
+     "integration_settings_section",
+     "enable_parks_integration",
+     "enable_transport_integration",
+     "column_break_integration",
+     "enable_accommodation_links",
+     "auto_create_transport_bookings",
+     "reporting_settings_section",
+     "daily_summary_enabled",
+     "weekly_summary_enabled",
+     "column_break_reporting",
+     "summary_report_recipients",
+     "website_settings_section",
+     "show_prices_on_website",
+     "show_availability_on_website",
+     "column_break_website",
+     "enable_online_payment",
+     "require_advance_payment",
+     "advance_payment_percentage"
+    ],
+    "fields": [
+     {
+      "fieldname": "general_settings_section",
+      "fieldtype": "Section Break",
+      "label": "General Settings"
+     },
+     {
+      "default": "USD",
+      "fieldname": "default_currency",
+      "fieldtype": "Link",
+      "label": "Default Currency",
+      "options": "Currency",
+      "reqd": 1
+     },
+     {
+      "default": "24",
+      "description": "How many hours before excursion date to stop accepting bookings",
+      "fieldname": "default_booking_deadline_hours",
+      "fieldtype": "Int",
+      "label": "Default Booking Deadline (Hours)"
+     },
+     {
+      "fieldname": "column_break_general",
+      "fieldtype": "Column Break"
+     },
+     {
+      "default": "8",
+      "description": "Default max capacity for new excursion packages",
+      "fieldname": "max_capacity_default",
+      "fieldtype": "Int",
+      "label": "Default Maximum Capacity"
+     },
+     {
+      "default": 1,
+      "fieldname": "enable_online_booking",
+      "fieldtype": "Check",
+      "label": "Enable Online Booking"
+     },
+     {
+      "fieldname": "pricing_settings_section",
+      "fieldtype": "Section Break",
+      "label": "Pricing Settings"
+     },
+     {
+      "default": "20.0",
+      "description": "Default discount percentage for children",
+      "fieldname": "child_discount_percentage",
+      "fieldtype": "Float",
+      "label": "Default Child Discount (%)",
+      "precision": "1"
+     },
+     {
+      "default": 1,
+      "fieldname": "enable_group_discounts",
+      "fieldtype": "Check",
+      "label": "Enable Group Discounts"
+     },
+     {
+      "fieldname": "column_break_pricing",
+      "fieldtype": "Column Break"
+     },
+     {
+      "default": 0,
+      "fieldname": "enable_seasonal_pricing",
+      "fieldtype": "Check",
+      "label": "Enable Seasonal Pricing"
+     },
+     {
+      "default": 1,
+      "fieldname": "tax_included_in_price",
+      "fieldtype": "Check",
+      "label": "Tax Included in Display Price"
+     },
+     {
+      "depends_on": "enable_group_discounts",
+      "fieldname": "group_discount_section",
+      "fieldtype": "Section Break",
+      "label": "Group Discount Tiers"
+     },
+     {
+      "description": "Configure discounts based on group size",
+      "fieldname": "group_discount_tiers",
+      "fieldtype": "Table",
+      "label": "Group Discount Tiers",
+      "options": "Excursion Group Discount Tier"
+     },
+     {
+      "fieldname": "time_premium_section",
+      "fieldtype": "Section Break",
+      "label": "Time Premium Settings"
+     },
+     {
+      "default": 0,
+      "fieldname": "enable_time_premiums",
+      "fieldtype": "Check",
+      "label": "Enable Time Premiums"
+     },
+     {
+      "default": "06:00:00",
+      "depends_on": "enable_time_premiums",
+      "fieldname": "early_morning_cutoff",
+      "fieldtype": "Time",
+      "label": "Early Morning Cutoff"
+     },
+     {
+      "default": "10.0",
+      "depends_on": "enable_time_premiums",
+      "fieldname": "early_morning_premium",
+      "fieldtype": "Float",
+      "label": "Early Morning Premium (%)"
+     },
+     {
+      "fieldname": "column_break_time",
+      "fieldtype": "Column Break"
+     },
+     {
+      "default": "19:00:00",
+      "depends_on": "enable_time_premiums",
+      "fieldname": "late_evening_cutoff",
+      "fieldtype": "Time",
+      "label": "Late Evening Cutoff"
+     },
+     {
+      "default": "15.0",
+      "depends_on": "enable_time_premiums",
+      "fieldname": "late_evening_premium",
+      "fieldtype": "Float",
+      "label": "Late Evening Premium (%)"
+     },
+     {
+      "fieldname": "transport_settings_section",
+      "fieldtype": "Section Break",
+      "label": "Transport Settings"
+     },
+     {
+      "default": 1,
+      "fieldname": "default_pickup_required",
+      "fieldtype": "Check",
+      "label": "Pickup Required by Default"
+     },
+     {
+      "default": "30",
+      "description": "How many minutes before excursion to schedule pickup",
+      "fieldname": "pickup_time_buffer_minutes",
+      "fieldtype": "Int",
+      "label": "Pickup Time Buffer (Minutes)"
+     },
+     {
+      "fieldname": "column_break_transport",
+      "fieldtype": "Column Break"
+     },
+     {
+      "default": 1,
+      "fieldname": "enable_transport_zones",
+      "fieldtype": "Check",
+      "label": "Enable Transport Zone Pricing"
+     },
+     {
+      "default": 0,
+      "fieldname": "auto_assign_vehicles",
+      "fieldtype": "Check",
+      "label": "Auto Assign Vehicles"
+     },
+     {
+      "depends_on": "enable_transport_zones",
+      "fieldname": "transport_zones_section",
+      "fieldtype": "Section Break",
+      "label": "Transport Zones"
+     },
+     {
+      "description": "Configure additional charges for different pickup zones",
+      "fieldname": "transport_zones",
+      "fieldtype": "Table",
+      "label": "Transport Zones",
+      "options": "Excursion Transport Zone"
+     },
+     {
+      "fieldname": "guide_settings_section",
+      "fieldtype": "Section Break",
+      "label": "Guide Assignment Settings"
+     },
+     {
+      "default": 0,
+      "description": "Automatically assign available guides to bookings",
+      "fieldname": "auto_assign_guides",
+      "fieldtype": "Check",
+      "label": "Auto Assign Guides"
+     },
+     {
+      "default": 1,
+      "fieldname": "guide_language_matching",
+      "fieldtype": "Check",
+      "label": "Match Guide Languages to Guest Preferences"
+     },
+     {
+      "fieldname": "column_break_guide",
+      "fieldtype": "Column Break"
+     },
+     {
+      "default": "2",
+      "fieldname": "max_daily_assignments_per_guide",
+      "fieldtype": "Int",
+      "label": "Max Daily Assignments per Guide"
+     },
+     {
+      "default": 1,
+      "fieldname": "require_guide_confirmation",
+      "fieldtype": "Check",
+      "label": "Require Guide Confirmation"
+     },
+     {
+      "fieldname": "notification_settings_section",
+      "fieldtype": "Section Break",
+      "label": "Notification Settings"
+     },
+     {
+      "default": 1,
+      "fieldname": "send_booking_confirmations",
+      "fieldtype": "Check",
+      "label": "Send Booking Confirmations"
+     },
+     {
+      "default": 1,
+      "fieldname": "send_reminder_notifications",
+      "fieldtype": "Check",
+      "label": "Send Reminder Notifications"
+     },
+     {
+      "default": "24",
+      "depends_on": "send_reminder_notifications",
+      "fieldname": "reminder_hours_before",
+      "fieldtype": "Int",
+      "label": "Send Reminders (Hours Before)"
+     },
+     {
+      "fieldname": "column_break_notification",
+      "fieldtype": "Column Break"
+     },
+     {
+      "default": 1,
+      "fieldname": "send_guide_notifications",
+      "fieldtype": "Check",
+      "label": "Send Guide Notifications"
+     },
+     {
+      "default": 1,
+      "fieldname": "send_customer_updates",
+      "fieldtype": "Check",
+      "label": "Send Customer Status Updates"
+     },
+     {
+      "default": 0,
+      "fieldname": "sms_notifications_enabled",
+      "fieldtype": "Check",
+      "label": "Enable SMS Notifications"
+     },
+     {
+      "fieldname": "cancellation_policy_section",
+      "fieldtype": "Section Break",
+      "label": "Cancellation Policy"
+     },
+     {
+      "default": 1,
+      "fieldname": "allow_customer_cancellation",
+      "fieldtype": "Check",
+      "label": "Allow Customer Cancellation"
+     },
+     {
+      "default": "48",
+      "depends_on": "allow_customer_cancellation",
+      "fieldname": "free_cancellation_hours",
+      "fieldtype": "Int",
+      "label": "Free Cancellation (Hours Before)"
+     },
+     {
+      "fieldname": "column_break_cancellation",
+      "fieldtype": "Column Break"
+     },
+     {
+      "default": "20.0",
+      "description": "Percentage of total amount to charge for late cancellations",
+      "fieldname": "cancellation_charge_percentage",
+      "fieldtype": "Float",
+      "label": "Cancellation Charge (%)"
+     },
+     {
+      "default": "100.0",
+      "fieldname": "no_show_charge_percentage",
+      "fieldtype": "Float",
+      "label": "No Show Charge (%)"
+     },
+     {
+      "fieldname": "integration_settings_section",
+      "fieldtype": "Section Break",
+      "label": "Integration Settings"
+     },
+     {
+      "default": 1,
+      "description": "Integrate with Safari Parks module for park fees",
+      "fieldname": "enable_parks_integration",
+      "fieldtype": "Check",
+      "label": "Enable Parks Integration"
+     },
+     {
+      "default": 1,
+      "description": "Integrate with Safari Transport module",
+      "fieldname": "enable_transport_integration",
+      "fieldtype": "Check",
+      "label": "Enable Transport Integration"
+     },
+     {
+      "fieldname": "column_break_integration",
+      "fieldtype": "Column Break"
+     },
+     {
+      "default": 1,
+      "description": "Link excursions to guest accommodation",
+      "fieldname": "enable_accommodation_links",
+      "fieldtype": "Check",
+      "label": "Enable Accommodation Links"
+     },
+     {
+      "default": 1,
+      "fieldname": "auto_create_transport_bookings",
+      "fieldtype": "Check",
+      "label": "Auto Create Transport Bookings"
+     },
+     {
+      "fieldname": "reporting_settings_section",
+      "fieldtype": "Section Break",
+      "label": "Reporting Settings"
+     },
+     {
+      "default": 1,
+      "fieldname": "daily_summary_enabled",
+      "fieldtype": "Check",
+      "label": "Enable Daily Summary Reports"
+     },
+     {
+      "default": 1,
+      "fieldname": "weekly_summary_enabled",
+      "fieldtype": "Check",
+      "label": "Enable Weekly Summary Reports"
+     },
+     {
+      "fieldname": "column_break_reporting",
+      "fieldtype": "Column Break"
+     },
+     {
+      "description": "Email addresses to receive summary reports (comma separated)",
+      "fieldname": "summary_report_recipients",
+      "fieldtype": "Small Text",
+      "label": "Summary Report Recipients"
+     },
+     {
+      "fieldname": "website_settings_section",
+      "fieldtype": "Section Break",
+      "label": "Website Settings"
+     },
+     {
+      "default": 1,
+      "fieldname": "show_prices_on_website",
+      "fieldtype": "Check",
+      "label": "Show Prices on Website"
+     },
+     {
+      "default": 1,
+      "fieldname": "show_availability_on_website",
+      "fieldtype": "Check",
+      "label": "Show Availability on Website"
+     },
+     {
+      "fieldname": "column_break_website",
+      "fieldtype": "Column Break"
+     },
+     {
+      "default": 0,
+      "fieldname": "enable_online_payment",
+      "fieldtype": "Check",
+      "label": "Enable Online Payment"
+     },
+     {
+      "default": 1,
+      "fieldname": "require_advance_payment",
+      "fieldtype": "Check",
+      "label": "Require Advance Payment"
+     },
+     {
+      "default": "50.0",
+      "depends_on": "require_advance_payment",
+      "fieldname": "advance_payment_percentage",
+      "fieldtype": "Float",
+      "label": "Advance Payment (%)"
+     }
+    ],
+    "index_web_pages_for_search": 1,
+    "is_submittable": 0,
+    "issingle": 1,
+    "links": [],
+    "modified": "2025-07-30 20:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Safari Excursion",
+    "name": "Excursion Settings",
+    "naming_rule": "Set by user",
+    "owner": "Administrator",
+    "permissions": [
+     {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Safari Manager",
+      "share": 1,
+      "write": 1
+     },
+     {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Excursion Manager",
+      "share": 1,
+      "write": 1
+     },
+     {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+     },
+     {
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Safari User",
+      "share": 1
+     }
+    ],
+    "quick_entry": 1,
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "track_changes": 1,
+    "track_seen": 1,
+    "track_views": 1
+   }

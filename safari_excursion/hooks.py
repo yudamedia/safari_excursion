@@ -63,18 +63,18 @@ website_route_rules = [
 # ------------------
 
 # include js, css files in header of desk.html
-app_include_css = "/assets/safari_excursion/css/safari_excursion.css"
-app_include_js = "/assets/safari_excursion/js/safari_excursion.js"
+# app_include_css = "/assets/safari_excursion/css/safari_excursion.css"
+# app_include_js = "/assets/safari_excursion/js/safari_excursion.js"
 
-# include js, css files in header of web template
-web_include_css = "/assets/safari_excursion/css/safari_excursion.css"
-web_include_js = "/assets/safari_excursion/js/safari_excursion.js"
+# # include js, css files in header of web template
+# web_include_css = "/assets/safari_excursion/css/safari_excursion.css"
+# web_include_js = "/assets/safari_excursion/js/safari_excursion.js"
 
 # include js in doctype views
-doctype_js = {
-    "Excursion Booking": "public/js/excursion_booking.js",
-    "Excursion Package": "public/js/excursion_package.js"
-}
+# doctype_js = {
+#     "Excursion Booking": "public/js/excursion_booking.js",
+#     "Excursion Package": "public/js/excursion_package.js"
+# }
 
 # Document Events
 # ---------------
@@ -172,8 +172,6 @@ user_data_fields = [
     }
 ]
 
-# Website generator for public excursion packages
-website_generators = ["Excursion Package"]
 
 # Fixtures for master data
 fixtures = [

@@ -1,0 +1,56 @@
+{
+    "add_total_row": 0,
+    "columns": [],
+    "creation": "2025-07-30 18:00:00.000000",
+    "disable_prepared_report": 0,
+    "disabled": 0,
+    "docstatus": 0,
+    "doctype": "Report",
+    "filters": [
+     {
+      "fieldname": "excursion_status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "\nScheduled\nIn Progress\nCompleted\nCancelled"
+     },
+     {
+      "fieldname": "assigned_guide",
+      "fieldtype": "Link",
+      "label": "Guide",
+      "options": "Safari Guide"
+     },
+     {
+      "fieldname": "excursion_package",
+      "fieldtype": "Link",
+      "label": "Package",
+      "options": "Excursion Package"
+     }
+    ],
+    "idx": 0,
+    "is_standard": "Yes",
+    "letter_head": "",
+    "modified": "2025-07-30 18:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Safari Excursion",
+    "name": "Today's Excursions",
+    "owner": "Administrator",
+    "prepared_report": 0,
+    "query": "",
+    "ref_doctype": "Excursion Booking",
+    "report_name": "Today's Excursions",
+    "report_type": "Query Report",
+    "roles": [
+     {
+      "role": "Safari Manager"
+     },
+     {
+      "role": "Excursion Manager"
+     },
+     {
+      "role": "Safari User"
+     },
+     {
+      "role": "Excursion Guide"
+     }
+    ]
+   }

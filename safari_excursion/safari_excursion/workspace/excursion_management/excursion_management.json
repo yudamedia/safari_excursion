@@ -7,348 +7,123 @@
   {
    "chart_name": "Popular Excursion Categories",
    "label": "Popular Excursion Categories"
-  },
-  {
-   "chart_name": "Daily Revenue Trend",
-   "label": "Daily Revenue Trend"
   }
  ],
- "content": "[{\"id\":\"_qkSqpJwT1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Safari Excursion Management</span>\",\"col\":12}},{\"id\":\"_7HDDlcAe3\",\"type\":\"paragraph\",\"data\":{\"text\":\"Manage day excursions, activity bookings, and guest experiences efficiently.\",\"col\":12}},{\"id\":\"_rTcKpNgq4\",\"type\":\"card\",\"data\":{\"card_name\":\"Excursion Bookings Today\",\"col\":3}},{\"id\":\"_sKdLqOhr5\",\"type\":\"card\",\"data\":{\"card_name\":\"Active Excursions\",\"col\":3}},{\"id\":\"_tLeMs P iq6\",\"type\":\"card\",\"data\":{\"card_name\":\"Available Guides\",\"col\":3}},{\"id\":\"_uMfNtQjs7\",\"type\":\"card\",\"data\":{\"card_name\":\"Today's Revenue\",\"col\":3}},{\"id\":\"_vNgOuRkt8\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Excursion Bookings Trend\",\"col\":6}},{\"id\":\"_wOhPvSlu9\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Popular Excursion Categories\",\"col\":6}},{\"id\":\"_xPiQwTmv0\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"_yQjRxUnw1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h5\\\">Quick Actions</span>\",\"col\":12}},{\"id\":\"_zRkSyVox2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Excursion Booking\",\"col\":2}},{\"id\":\"_ASlTzWpy3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Excursion Package\",\"col\":2}},{\"id\":\"_BTmU0Xqz4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Today's Excursions\",\"col\":2}},{\"id\":\"_CUnV1Yra5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Assign Guides\",\"col\":2}},{\"id\":\"_DVoW2Zsb6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Excursion Reports\",\"col\":2}},{\"id\":\"_EWpX3atc7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Transport Status\",\"col\":2}}]",
- "creation": "2025-07-30 12:00:00.000000",
+ "content": "[{\"id\":\"aPgruyfBPE\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Active Excursions\",\"col\":4}},{\"id\":\"-d37V__2a_\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Available Guides\",\"col\":4}},{\"id\":\"XVymp0K0jF\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today's Revenue\",\"col\":4}},{\"id\":\"7YwqZWlbwe\",\"type\":\"paragraph\",\"data\":{\"text\":\"\ud83d\udccb Excursion Operations\",\"col\":6}},{\"id\":\"Pii4F34TId\",\"type\":\"paragraph\",\"data\":{\"text\":\"\ud83d\udcca View Reports\",\"col\":6}},{\"id\":\"Ed-naoASFR\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Excursion Bookings\",\"col\":3}},{\"id\":\"5rQbdXU26o\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Excursion Packages\",\"col\":3}},{\"id\":\"J6arh_FqAE\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\" Today's Excursions\",\"col\":3}},{\"id\":\"Ab4fjALhOd\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Guide Assignment\",\"col\":3}},{\"id\":\"DrBPVlocOh\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Excursion Booking\",\"col\":3}},{\"id\":\"GMIix1uiS0\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Excursion Package\",\"col\":3}},{\"id\":\"IpaqtFBtbh\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Excursion Reports\",\"col\":3}},{\"id\":\"PxsN5JZqaA\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Transport Status\",\"col\":3}},{\"id\":\"u2J6pQwKL1\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"eaNlR-FzhJ\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Excursion Bookings Trend\",\"col\":6}},{\"id\":\"rNgV-_af_C\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Popular Excursion Categories\",\"col\":6}}]",
+ "creation": "2025-07-31 02:57:54.968530",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
  "for_user": "",
- "hide_custom": 0,
- "icon": "globe",
+ "hide_custom": 1,
+ "icon": "binoculars",
  "idx": 0,
+ "indicator_color": "green",
  "is_hidden": 0,
- "label": "Safari Excursion",
- "links": [
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Excursions",
-   "link_count": 0,
-   "link_to": "",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Excursion Booking",
-   "link_count": 0,
-   "link_to": "Excursion Booking",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Excursion Package",
-   "link_count": 0,
-   "link_to": "Excursion Package",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Excursion Operation",
-   "link_count": 0,
-   "link_to": "Excursion Operation",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Excursion Category",
-   "link_count": 0,
-   "link_to": "Excursion Category",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Operations",
-   "link_count": 0,
-   "link_to": "",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Today's Excursions",
-   "link_count": 0,
-   "link_to": "/app/query-report/Today's Excursions",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Guide Assignment",
-   "link_count": 0,
-   "link_to": "/app/query-report/Guide Assignment Status",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Vehicle Scheduling",
-   "link_count": 0,
-   "link_to": "/app/query-report/Vehicle Scheduling",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Transport Status",
-   "link_count": 0,
-   "link_to": "/app/query-report/Excursion Transport Status",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Reports",
-   "link_count": 0,
-   "link_to": "",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Excursion Booking Report",
-   "link_count": 0,
-   "link_to": "Excursion Booking Report",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Excursion Revenue Analysis",
-   "link_count": 0,
-   "link_to": "Excursion Revenue Analysis",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Popular Excursion Packages",
-   "link_count": 0,
-   "link_to": "Popular Excursion Packages",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Guide Performance Report",
-   "link_count": 0,
-   "link_to": "Excursion Guide Performance",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Settings",
-   "link_count": 0,
-   "link_to": "",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Excursion Settings",
-   "link_count": 0,
-   "link_to": "Excursion Settings",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  }
- ],
- "modified": "2025-07-30 12:00:00.000000",
+ "label": "Excursion Management",
+ "links": [],
+ "modified": "2025-08-01 03:51:28.753052",
  "modified_by": "Administrator",
  "module": "Safari Excursion",
- "name": "Safari Excursion",
+ "name": "Excursion Management",
  "number_cards": [
   {
-   "aggregate_function_based_on": "",
-   "color": "Blue",
-   "creation": "2025-07-30 12:00:00.000000",
-   "docstatus": 0,
-   "doctype": "Number Card",
-   "document_type": "Excursion Booking",
-   "dynamic_filters_json": "[]",
-   "filters_json": "[[\"Excursion Booking\",\"excursion_date\",\"=\",\"Today\",false]]",
-   "function": "Count",
-   "idx": 0,
-   "is_public": 1,
-   "label": "Excursion Bookings Today",
-   "modified": "2025-07-30 12:00:00.000000",
-   "modified_by": "Administrator",
-   "name": "Excursion Bookings Today",
-   "owner": "Administrator",
-   "show_percentage_stats": 1,
-   "stats_time_interval": "Daily"
-  },
-  {
-   "aggregate_function_based_on": "",
-   "color": "Green",
-   "creation": "2025-07-30 12:00:00.000000",
-   "docstatus": 0,
-   "doctype": "Number Card",
-   "document_type": "Excursion Booking",
-   "dynamic_filters_json": "[]",
-   "filters_json": "[[\"Excursion Booking\",\"excursion_date\",\"=\",\"Today\",false],[\"Excursion Booking\",\"excursion_status\",\"in\",[\"Scheduled\",\"In Progress\"],false]]",
-   "function": "Count",
-   "idx": 0,
-   "is_public": 1,
    "label": "Active Excursions",
-   "modified": "2025-07-30 12:00:00.000000",
-   "modified_by": "Administrator",
-   "name": "Active Excursions",
-   "owner": "Administrator",
-   "show_percentage_stats": 0,
-   "stats_time_interval": "Daily"
+   "number_card_name": "Active Excursions"
   },
   {
-   "aggregate_function_based_on": "",
-   "color": "Purple",
-   "creation": "2025-07-30 12:00:00.000000",
-   "docstatus": 0,
-   "doctype": "Number Card",
-   "document_type": "Safari Guide",
-   "dynamic_filters_json": "[]",
-   "filters_json": "[[\"Safari Guide\",\"availability_status\",\"=\",\"Available\",false]]",
-   "function": "Count",
-   "idx": 0,
-   "is_public": 1,
    "label": "Available Guides",
-   "modified": "2025-07-30 12:00:00.000000",
-   "modified_by": "Administrator",
-   "name": "Available Guides",
-   "owner": "Administrator",
-   "show_percentage_stats": 0,
-   "stats_time_interval": "Daily"
+   "number_card_name": "Available Guides"
   },
   {
-   "aggregate_function_based_on": "total_amount",
-   "color": "Orange",
-   "creation": "2025-07-30 12:00:00.000000",
-   "docstatus": 0,
-   "doctype": "Number Card",
-   "document_type": "Excursion Booking",
-   "dynamic_filters_json": "[]",
-   "filters_json": "[[\"Excursion Booking\",\"excursion_date\",\"=\",\"Today\",false],[\"Excursion Booking\",\"booking_status\",\"!=\",\"Cancelled\",false]]",
-   "function": "Sum",
-   "idx": 0,
-   "is_public": 1,
    "label": "Today's Revenue",
-   "modified": "2025-07-30 12:00:00.000000",
-   "modified_by": "Administrator",
-   "name": "Today's Revenue",
-   "owner": "Administrator",
-   "show_percentage_stats": 1,
-   "stats_time_interval": "Daily"
+   "number_card_name": "Today's Revenue"
   }
  ],
  "owner": "Administrator",
- "pin_to_bottom": 0,
- "pin_to_top": 0,
+ "parent_page": "",
  "public": 1,
  "quick_lists": [],
- "roles": [],
- "sequence_id": 7.0,
+ "restrict_to_domain": "Safari Management",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Safari Manager"
+  },
+  {
+   "role": "Excursion Manager"
+  },
+  {
+   "role": "Excursion Guide"
+  }
+ ],
+ "sequence_id": 5.0,
  "shortcuts": [
   {
-   "color": "Blue",
+   "color": "Grey",
    "doc_view": "List",
-   "format": "",
-   "icon": "plus",
+   "label": " Today's Excursions",
+   "link_to": "Today's Excursions",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "format": "&nbsp;",
+   "label": "Excursion Packages",
+   "link_to": "Excursion Package",
+   "stats_filter": "[[\"Excursion Package\",\"name\",\"=\",null,false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "format": "&nbsp;",
+   "label": "Excursion Bookings",
+   "link_to": "Excursion Booking",
+   "stats_filter": "[[\"Excursion Booking\",\"name\",\"=\",null,false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Excursion Reports",
+   "link_to": "Excursion Booking Report",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "format": "&nbsp;",
    "label": "New Excursion Booking",
    "link_to": "Excursion Booking",
-   "stats_filter": "",
+   "stats_filter": "[[\"Excursion Booking\",\"name\",\"=\",null,false]]",
    "type": "DocType"
   },
   {
-   "color": "Green",
+   "color": "Grey",
    "doc_view": "List",
-   "format": "",
-   "icon": "plus",
+   "label": "Guide Assignment",
+   "link_to": "Guide Assignment Status",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Transport Status",
+   "link_to": "Excursion Transport Status",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "format": "&nbsp;",
    "label": "New Excursion Package",
    "link_to": "Excursion Package",
-   "stats_filter": "",
+   "stats_filter": "[[\"Excursion Package\",\"name\",\"=\",null,false]]",
    "type": "DocType"
-  },
-  {
-   "color": "Orange",
-   "doc_view": "",
-   "format": "",
-   "icon": "calendar",
-   "label": "Today's Excursions",
-   "link_to": "/app/query-report/Today's Excursions",
-   "stats_filter": "",
-   "type": "Report"
-  },
-  {
-   "color": "Purple",
-   "doc_view": "",
-   "format": "",
-   "icon": "user",
-   "label": "Assign Guides",
-   "link_to": "/app/query-report/Guide Assignment Status",
-   "stats_filter": "",
-   "type": "Report"
-  },
-  {
-   "color": "Red",
-   "doc_view": "",
-   "format": "",
-   "icon": "bar-chart",
-   "label": "Excursion Reports",
-   "link_to": "/app/query-report/Excursion Booking Report",
-   "stats_filter": "",
-   "type": "Report"
-  },
-  {
-   "color": "Gray",
-   "doc_view": "",
-   "format": "",
-   "icon": "truck",
-   "label": "Transport Status",
-   "link_to": "/app/query-report/Excursion Transport Status",
-   "stats_filter": "",
-   "type": "Report"
   }
  ],
  "title": "Excursion Management"

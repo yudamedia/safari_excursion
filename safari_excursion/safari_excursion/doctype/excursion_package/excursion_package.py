@@ -11,6 +11,7 @@ class ExcursionPackage(Document):
     
     This controller handles excursion package management,
     including pricing, availability, and operational details.
+    Note: Web functionality removed - this is now a desk-only DocType
     """
     
     def validate(self):
@@ -63,172 +64,141 @@ class ExcursionPackage(Document):
             frappe.throw(_("Maximum capacity must be greater than 0"))
         
         if self.duration_hours and self.duration_hours <= 0:
-            frappe.throw(_("Duration must be greater than 0"))
-        
-        if self.booking_deadline_hours and self.booking_deadline_hours < 0:
-            frappe.throw(_("Booking deadline cannot be negative"))
+            frappe.throw(_("Duration must be greater than 0 hours"))
     
     def validate_availability(self):
         """Validate availability settings"""
+        # Add availability validation logic here
+        pass
+    
+    def validate_requirements(self):
+        """Validate age and fitness requirements"""
         if self.minimum_age and self.maximum_age:
             if self.minimum_age >= self.maximum_age:
                 frappe.throw(_("Minimum age must be less than maximum age"))
     
-    def validate_requirements(self):
-        """Validate requirements and equipment"""
-        if self.fitness_level and self.fitness_level not in [
-            "Low", "Moderate", "High", "Very High"
-        ]:
-            frappe.throw(_("Invalid fitness level selected"))
-    
     def set_default_values(self):
         """Set default values for various fields"""
-        if not self.package_status:
-            self.package_status = "Draft"
-        
         if not self.currency:
-            self.currency = "USD"
+            self.currency = frappe.get_cached_value("Company", frappe.defaults.get_user_default("Company"), "default_currency")
         
-        if not self.booking_deadline_hours:
+        if self.booking_deadline_hours is None:
             self.booking_deadline_hours = 24
-    
-    def autoname(self):
-        """Set package name automatically if not provided"""
-        if not self.package_code:
-            from frappe.model.naming import make_autoname
-            self.package_code = make_autoname("EXP-.#####")
-    
-    def on_submit(self):
-        """Handle package submission"""
-        self.validate_package_completeness()
-        self.send_notifications()
-    
-    def validate_package_completeness(self):
-        """Validate that package is complete before submission"""
-        required_fields = [
-            "package_name", "package_code", "excursion_category",
-            "description", "duration_hours", "max_capacity"
-        ]
         
-        missing_fields = []
-        for field in required_fields:
-            if not getattr(self, field, None):
-                missing_fields.append(field.replace("_", " ").title())
+        # Set system information fields
+        if self.is_new():
+            self.created_by_user = frappe.session.user
         
-        if missing_fields:
-            frappe.throw(_("Please complete the following fields: {0}").format(
-                ", ".join(missing_fields)))
-    
-    def send_notifications(self):
-        """Send notifications when package is submitted"""
-        # Implementation for notifications
-        pass
+        self.last_modified_by = frappe.session.user
     
     def get_package_summary(self):
-        """Get a summary of the package"""
-        summary = f"{self.package_name} ({self.package_code})"
-        
-        if self.excursion_category:
-            summary += f" - {self.excursion_category}"
-        
-        if self.duration_hours:
-            summary += f" - {self.duration_hours}h"
-        
-        if self.max_capacity:
-            summary += f" - Max {self.max_capacity} guests"
-        
-        return summary
+        """Get a summary of the package for listing views"""
+        return {
+            "name": self.name,
+            "package_name": self.package_name,
+            "package_code": self.package_code,
+            "category": self.excursion_category,
+            "base_price_adult": self.base_price_adult,
+            "currency": self.currency,
+            "duration_hours": self.duration_hours,
+            "max_capacity": self.max_capacity,
+            "featured_image": self.featured_image,
+            "is_published": self.is_published,
+            "is_featured": self.is_featured
+        }
     
-    def get_pricing_summary(self):
-        """Get pricing summary"""
-        pricing = []
+    def get_available_dates(self, start_date=None, end_date=None):
+        """Get available dates for booking this package"""
+        # Implementation for getting available dates
+        # This would consider seasonal availability, available days, etc.
+        available_dates = []
         
-        if self.base_price_adult:
-            pricing.append(f"Adult: {self.base_price_adult}")
+        # Logic to calculate available dates based on:
+        # - available_days (which days of week)
+        # - seasonal_availability
+        # - existing bookings vs max_capacity
         
-        if self.base_price_child:
-            pricing.append(f"Child: {self.base_price_child}")
-        
-        if self.currency:
-            pricing.append(f"({self.currency})")
-        
-        return " | ".join(pricing) if pricing else "No pricing set"
+        return available_dates
     
-    def is_available_on_date(self, check_date):
-        """Check if package is available on specific date"""
-        if not self.is_published or self.package_status != "Active":
-            return False
+    def calculate_price(self, adults=1, children=0, booking_date=None):
+        """Calculate price for given parameters"""
+        total_price = 0
         
-        # Check seasonal availability
-        if self.seasonal_availability:
-            for season in self.seasonal_availability:
-                if season.is_date_in_season(check_date):
-                    return True
-            return False
+        # Base pricing
+        if adults:
+            total_price += (self.base_price_adult or 0) * adults
+        if children:
+            total_price += (self.base_price_child or 0) * children
         
-        return True
-    
-    def get_effective_price(self, guest_type="adult", guest_count=1, date=None):
-        """Get effective price for given parameters"""
-        base_price = self.base_price_adult if guest_type == "adult" else self.base_price_child
-        
-        if not base_price:
-            return 0
-        
-        # Apply seasonal pricing
-        if date and self.seasonal_pricing:
+        # Apply seasonal pricing if available
+        if booking_date and self.seasonal_pricing:
+            # Logic to apply seasonal pricing
             for season in self.seasonal_pricing:
-                if season.is_date_in_season(date):
-                    base_price = season.calculate_price(base_price, guest_type)
+                if self._is_date_in_season(booking_date, season):
+                    total_price = total_price * (1 + (season.price_adjustment_percentage / 100))
                     break
         
-        # Apply group discount
-        if self.group_discount_applicable and guest_count >= self.minimum_group_size:
-            # Group discount logic would be implemented here
-            pass
+        # Apply group discounts if applicable
+        total_people = adults + children
+        if self.group_discount_applicable and self.minimum_group_size:
+            if total_people >= self.minimum_group_size:
+                # Apply group discount logic (example: 10% discount)
+                discount_percentage = 10  # This could be configurable
+                total_price = total_price * (1 - (discount_percentage / 100))
         
-        return base_price * guest_count
+        return total_price
     
-    def get_availability_status(self):
-        """Get current availability status"""
+    def _is_date_in_season(self, booking_date, season):
+        """Check if booking date falls within a seasonal pricing period"""
+        # Implementation to check if date is in season
+        # This would compare against season.start_date and season.end_date
+        return False  # Placeholder
+    
+    def can_book(self, booking_date=None, party_size=1):
+        """Check if package can be booked for given date and party size"""
         if not self.is_published:
-            return "Draft"
+            return False, "Package is not published"
         
-        if self.package_status != "Active":
-            return self.package_status
+        if self.max_capacity and party_size > self.max_capacity:
+            return False, f"Party size exceeds maximum capacity of {self.max_capacity}"
         
-        return "Available"
+        # Check booking deadline
+        if booking_date and self.booking_deadline_hours:
+            from datetime import datetime, timedelta
+            deadline = datetime.now() + timedelta(hours=self.booking_deadline_hours)
+            booking_datetime = datetime.combine(booking_date, datetime.min.time())
+            if booking_datetime < deadline:
+                return False, f"Booking must be made at least {self.booking_deadline_hours} hours in advance"
+        
+        # Check if date is available (not fully booked)
+        if booking_date:
+            existing_bookings = frappe.get_all("Excursion Booking", {
+                "excursion_package": self.name,
+                "excursion_date": booking_date,
+                "booking_status": ["in", ["Confirmed", "Checked In"]]
+            }, ["SUM(total_participants) as total_booked"])
+            
+            total_booked = existing_bookings[0].total_booked or 0
+            if self.max_capacity and (total_booked + party_size) > self.max_capacity:
+                return False, f"Insufficient capacity. Available: {self.max_capacity - total_booked}"
+        
+        return True, "Available for booking"
     
-    @frappe.whitelist()
-    def publish_package(self):
-        """Publish the package"""
-        self.is_published = 1
-        self.package_status = "Active"
-        self.save()
-        frappe.msgprint(_("Package published successfully"))
-    
-    @frappe.whitelist()
-    def unpublish_package(self):
-        """Unpublish the package"""
-        self.is_published = 0
-        self.package_status = "Inactive"
-        self.save()
-        frappe.msgprint(_("Package unpublished successfully"))
-    
-    def get_related_bookings(self):
-        """Get related excursion bookings"""
-        return frappe.get_all("Excursion Booking", {
-            "excursion_package": self.name
-        }, ["name", "booking_number", "booking_status", "excursion_date"])
-    
-    def get_booking_count(self):
-        """Get total booking count"""
-        return frappe.db.count("Excursion Booking", {
-            "excursion_package": self.name
-        })
-    
-    def get_revenue_summary(self):
-        """Get revenue summary for this package"""
-        # This would calculate total revenue from bookings
-        # Implementation would depend on business logic
-        return 0 
+    def get_booking_statistics(self):
+        """Get booking statistics for this package"""
+        stats = frappe.db.sql("""
+            SELECT 
+                COUNT(*) as total_bookings,
+                SUM(total_participants) as total_participants,
+                AVG(total_amount) as average_booking_value,
+                SUM(CASE WHEN booking_status = 'Confirmed' THEN 1 ELSE 0 END) as confirmed_bookings
+            FROM `tabExcursion Booking`
+            WHERE excursion_package = %s
+        """, [self.name], as_dict=True)
+        
+        return stats[0] if stats else {
+            "total_bookings": 0,
+            "total_participants": 0,
+            "average_booking_value": 0,
+            "confirmed_bookings": 0
+        }
